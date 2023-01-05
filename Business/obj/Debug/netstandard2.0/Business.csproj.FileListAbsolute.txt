@@ -1,0 +1,17 @@
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\Business.deps.json
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\Business.dll
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\Business.pdb
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\Core.dll
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\DataAccess.dll
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\Entities.dll
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\Core.pdb
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\DataAccess.pdb
+D:\Projects\C#\HvBS\Business\bin\Debug\netstandard2.0\Entities.pdb
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.csproj.AssemblyReference.cache
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.AssemblyInfoInputs.cache
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.AssemblyInfo.cs
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.csproj.CoreCompileInputs.cache
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.csproj.CopyComplete
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.dll
+D:\Projects\C#\HvBS\Business\obj\Debug\netstandard2.0\Business.pdb
