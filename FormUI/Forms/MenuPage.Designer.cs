@@ -238,6 +238,7 @@
             this.button_emergency_record.Text = "   ・ACİL Kodlu Kayıtlar";
             this.button_emergency_record.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_emergency_record.UseVisualStyleBackColor = false;
+            this.button_emergency_record.Click += new System.EventHandler(this.button_emergency_record_Click);
             // 
             // button2
             // 
@@ -350,12 +351,13 @@
             // label_rank
             // 
             this.label_rank.BackColor = System.Drawing.Color.White;
+            this.label_rank.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.label_rank.Enabled = false;
             this.label_rank.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_rank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(45)))), ((int)(((byte)(66)))));
-            this.label_rank.Location = new System.Drawing.Point(409, 456);
+            this.label_rank.Location = new System.Drawing.Point(409, 459);
             this.label_rank.Name = "label_rank";
-            this.label_rank.Size = new System.Drawing.Size(194, 32);
+            this.label_rank.Size = new System.Drawing.Size(194, 25);
             this.label_rank.TabIndex = 8;
             this.label_rank.Text = "Hv.Uck.Bkm.Tğm";
             this.label_rank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

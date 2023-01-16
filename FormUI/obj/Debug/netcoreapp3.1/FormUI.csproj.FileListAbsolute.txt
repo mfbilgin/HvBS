@@ -97,3 +97,4 @@ D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Forms.PasswordResetPag
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Properties.Resources.resources
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Forms.RegisterPage.resources
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Forms.MenuPage.resources
+D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Forms.DashboardPage.resources

@@ -2,13 +2,21 @@
 {
     public static class Messages
     {
-        public const string LoginSuccessful = "Giriş Başarılı";
-        public const string UserRegistered = "Kayıt Oluşturuldu";
-        public const string UserAdded = "Kullanıcı Eklendi";
-        public const string UserUpdated = "Kullanıcı Güncellendi";
-        public const string HvBSNumberError = "HvBS Numarası Hatalı";
-        public const string PasswordError = "Parola Hatalı";
-        public const string ClaimAdded = "Rol eklendi.";
-        public const string PasswordReset = "Parolanız HvBS numaranız olarak değiştirildi";
+        public const string LoginSuccessful = "Giriş Başarılı.";
+        public const string UserRegistered = "Kullanıcı Kayıdı Oluşturuldu.";
+        
+        public const string UserAdded = "Kullanıcı Eklendi.";
+        public const string UserUpdated = "Kullanıcı Güncellendi.";
+        
+        public const string HvBsNumberError = "HvBS Numarası Hatalı!";
+        public const string PasswordError = "Parola Hatalı!";
+        public const string PasswordReset = "Parolanız HvBS Numaranız Olarak Değiştirildi.";
+
+        public const string ClaimAdded = "Rol Eklendi.";
+        
+        public const string NotAuthorized = "Yetkiniz Yetersiz!";
+        public const string RecordAdded = "Kayıt Başarıyla Eklendi.";
+        public const string RecordDeleted = "Kayıt Başarıyla Silindi.";
+        public const string RecordUpdated = "Kayıt Başarıyla Güncellendi.";
     }
 }

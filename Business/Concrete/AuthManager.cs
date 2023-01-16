@@ -22,7 +22,7 @@ namespace Business.Concrete
             User userToCheck = _userService.GetByHvBSNumber(userForPasswordResetDto.HvBSNumber).Data;
             if (userToCheck == null)
             {
-                return new ErrorResult(Messages.HvBSNumberError);
+                return new ErrorResult(Messages.HvBsNumberError);
             }
 
             HashingHelper.CreatePasswordHash(userForPasswordResetDto.HvBSNumber, out passwordHash, out passwordSalt);
@@ -37,7 +37,7 @@ namespace Business.Concrete
             User userToCheck = _userService.GetByHvBSNumber(userForLoginDto.HvBSNumber).Data;
             if (userToCheck == null)
             {
-                return new ErrorResult(Messages.HvBSNumberError);
+                return new ErrorResult(Messages.HvBsNumberError);
             }
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
@@ -50,7 +50,7 @@ namespace Business.Concrete
         {
             User userToCheck = _userService.GetByHvBSNumber(userForPasswordResetDto.HvBSNumber).Data;
             if (userToCheck == null)
-                return new ErrorResult(Messages.HvBSNumberError);
+                return new ErrorResult(Messages.HvBsNumberError);
             var result = ChangePassword(userForPasswordResetDto);
             return new SuccessResult(result.Message);
         }

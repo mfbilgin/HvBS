@@ -9,6 +9,7 @@ namespace Business.Abstract
         IResult Add(UserOperationClaim userOperationClaim);
         IDataResult<List<UserOperationClaim>> GetByClaimId(int claimId);
         IDataResult<List<UserOperationClaim>> GetAll();
-        
+        IDataResult<UserOperationClaim> GetByHvBsNumber(string hvbsNumber);
+
     }
 }

@@ -38,5 +38,13 @@ namespace FormUI.Forms
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void button_emergency_record_Click(object sender, EventArgs e)
+        {
+            DashboardPage dashboardPage = new DashboardPage(HvBSNumber,_userService);
+            Hide();
+            dashboardPage.ShowDialog();
+            Close();
+        }
     }
 }
