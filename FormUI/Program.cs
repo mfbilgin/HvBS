@@ -46,6 +46,10 @@ namespace FormUI
                     services.AddTransient<IOperationClaimService, OperationClaimManager>();
                     services.AddTransient<IOperationClaimDal, EfOperationClaimDal>();
 
+                    services.AddTransient<IRecordService, RecordManager>();
+                    services.AddTransient<IRecordDal, EfRecordDal>();
+
+
                 });
         }
     }

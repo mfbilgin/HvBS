@@ -10,12 +10,10 @@ namespace Business.Concrete
     public class UserOperationClaimManager : IUserOperationClaimService
     {
         private readonly IUserOperationClaimDal _userOperationClaimDal;
-        private readonly IUserService _userService;
 
-        public UserOperationClaimManager(IUserOperationClaimDal userOperationClaimDal, IUserService userService)
+        public UserOperationClaimManager(IUserOperationClaimDal userOperationClaimDal)
         {
             _userOperationClaimDal = userOperationClaimDal;
-            _userService = userService;
         }
 
         public IResult Add(UserOperationClaim companyOperationClaim)
@@ -36,10 +34,9 @@ namespace Business.Concrete
             return new SuccessDataResult<List<UserOperationClaim>>(_userOperationClaimDal.GetAll());
         }
 
-        public IDataResult<UserOperationClaim> GetByHvBsNumber(string hvbsNumber)
+        public IDataResult<UserOperationClaim> GetByUserId(int userId)
         {
-            User user = _userService.GetByHvBSNumber(hvbsNumber).Data;
-            return new SuccessDataResult<UserOperationClaim>(_userOperationClaimDal.Get(claim => claim.UserId == user.UserId));
+            return new SuccessDataResult<UserOperationClaim>(_userOperationClaimDal.Get(claim => claim.UserId == userId)) ;
         }
     }
 }

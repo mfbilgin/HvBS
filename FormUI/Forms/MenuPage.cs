@@ -14,11 +14,17 @@ namespace FormUI.Forms
     {
         private readonly string HvBSNumber;
         private readonly IUserService _userService;
-        public MenuPage(string hvBSNumber,IUserService userService)
+        private readonly IRecordService _recordService;
+        private readonly IUserOperationClaimService _userOperationClaimService;
+        private readonly IAuthService _authService;
+        public MenuPage(string hvBSNumber,IUserService userService, IRecordService recordService, IUserOperationClaimService userOperationClaimService, IAuthService authService)
         {
             InitializeComponent();
             HvBSNumber = hvBSNumber;
             _userService = userService;
+            _userOperationClaimService = userOperationClaimService;
+            _recordService = recordService;
+            _authService = authService;
         }
 
         private void MenuPage_Load(object sender, EventArgs e)
@@ -41,9 +47,17 @@ namespace FormUI.Forms
 
         private void button_emergency_record_Click(object sender, EventArgs e)
         {
-            DashboardPage dashboardPage = new DashboardPage(HvBSNumber,_userService);
+            DashboardPage dashboardPage = new DashboardPage(HvBSNumber,_userService,_recordService,_userOperationClaimService,_authService);
             Hide();
             dashboardPage.ShowDialog();
+            Close();
+        }
+
+        private void button_logout_Click(object sender, EventArgs e)
+        {
+            LoginPage loginPage = new LoginPage(_authService, _userService, _userOperationClaimService, _recordService);
+            Hide();
+            loginPage.ShowDialog();
             Close();
         }
     }

@@ -54,6 +54,7 @@
             this.button_minimize = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.label_rank = new System.Windows.Forms.TextBox();
+            this.button_logout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.basic_picture)).BeginInit();
             this.groupBox_rapor.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -362,12 +363,26 @@
             this.label_rank.Text = "Hv.Uck.Bkm.Tğm";
             this.label_rank.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button_logout
+            // 
+            this.button_logout.BackColor = System.Drawing.Color.Transparent;
+            this.button_logout.FlatAppearance.BorderSize = 0;
+            this.button_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_logout.Image = ((System.Drawing.Image)(resources.GetObject("button_logout.Image")));
+            this.button_logout.Location = new System.Drawing.Point(852, 12);
+            this.button_logout.Name = "button_logout";
+            this.button_logout.Size = new System.Drawing.Size(36, 37);
+            this.button_logout.TabIndex = 22;
+            this.button_logout.UseVisualStyleBackColor = false;
+            this.button_logout.Click += new System.EventHandler(this.button_logout_Click);
+            // 
             // MenuPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 935);
+            this.Controls.Add(this.button_logout);
             this.Controls.Add(this.label_rank);
             this.Controls.Add(this.button_minimize);
             this.Controls.Add(this.button_close);
@@ -432,5 +447,6 @@
         private System.Windows.Forms.Button button_minimize;
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.TextBox label_rank;
+        private System.Windows.Forms.Button button_logout;
     }
 }

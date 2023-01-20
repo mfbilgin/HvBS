@@ -10,10 +10,14 @@ namespace FormUI.Forms
     {
         private readonly IAuthService _authService;
         private readonly IUserService _userService;
-        public LoginPage(IAuthService authService, IUserService userService)
+        private readonly IUserOperationClaimService _userOperationClaimService;
+        private readonly IRecordService _recordService;
+        public LoginPage(IAuthService authService, IUserService userService, IUserOperationClaimService userOperationClaimService, IRecordService recordService)
         {
             _authService = authService;
             _userService = userService;
+            _userOperationClaimService = userOperationClaimService;
+            _recordService = recordService;
             InitializeComponent();
         }
 
@@ -68,7 +72,7 @@ namespace FormUI.Forms
             var result = _authService.Login(user);
             if (result.Success)
             {
-                MenuPage menuPage = new MenuPage(user.HvBSNumber,_userService);
+                MenuPage menuPage = new MenuPage(user.HvBSNumber, _userService, _recordService, _userOperationClaimService,_authService);
                 Hide();
                 menuPage.ShowDialog();
                 Close();
@@ -76,7 +80,7 @@ namespace FormUI.Forms
             }
             else
             {
-                MessageBox.Show(result.Message,"Giriş Hatalı", icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.OK);
+                MessageBox.Show(result.Message, "Giriş Hatalı", icon: MessageBoxIcon.Warning, buttons: MessageBoxButtons.OK);
             }
         }
 

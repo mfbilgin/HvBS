@@ -98,3 +98,6 @@ D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Properties.Resources.r
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Forms.RegisterPage.resources
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Forms.MenuPage.resources
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.Forms.DashboardPage.resources
+D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.UserControls.EmergencyRecordControl.resources
+D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.UserControls.RecordAddControl.resources
+D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.UserControls.OngoingMaintenanceRecordControl.resources
