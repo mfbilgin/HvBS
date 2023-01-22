@@ -20,6 +20,9 @@
     <Compile Update="Forms\RegisterPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UserControls\ProccessControl\PartAddControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\ProccessControl\RecordDeleteControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
