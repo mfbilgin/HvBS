@@ -14,16 +14,31 @@
     <Compile Update="Forms\PasswordResetPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\RecordUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\RegisterPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\EmergencyRecordControl.cs">
+    <Compile Update="UserControls\ProccessControl\RecordDeleteControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\OngoingMaintenanceRecordControl.cs">
+    <Compile Update="UserControls\ViewControls\CompletedRecordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserControls\RecordAddControl.cs">
+    <Compile Update="UserControls\ViewControls\EmergencyRecordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ViewControls\OngoingMaintenanceRecordControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ProccessControl\RecordAddControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ProccessControl\RecordUpdateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ViewControls\WaitingRecordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

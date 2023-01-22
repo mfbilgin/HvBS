@@ -18,5 +18,6 @@
         public const string RecordAdded = "Kayıt Başarıyla Eklendi.";
         public const string RecordDeleted = "Kayıt Başarıyla Silindi.";
         public const string RecordUpdated = "Kayıt Başarıyla Güncellendi.";
+        public const string RecordAlreadyExist = "Bu Kayıt Zaten Mevcut.";
     }
 }

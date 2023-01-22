@@ -8,6 +8,9 @@ C:\Users\mfbil\OneDrive\Desktop\QRSoft\QRSoft\Core\obj\Debug\netstandard2.0\Core
 C:\Users\mfbil\OneDrive\Desktop\QRSoft\QRSoft\Core\obj\Debug\netstandard2.0\Core.csproj.CoreCompileInputs.cache
 C:\Users\mfbil\OneDrive\Desktop\QRSoft\QRSoft\Core\obj\Debug\netstandard2.0\Core.dll
 C:\Users\mfbil\OneDrive\Desktop\QRSoft\QRSoft\Core\obj\Debug\netstandard2.0\Core.pdb
+D:\Projects\C#\HvBS\Core\bin\Debug\netstandard2.0\Core.deps.json
+D:\Projects\C#\HvBS\Core\bin\Debug\netstandard2.0\Core.dll
+D:\Projects\C#\HvBS\Core\bin\Debug\netstandard2.0\Core.pdb
 D:\Projects\C#\HvBS\Core\obj\Debug\netstandard2.0\Core.csproj.AssemblyReference.cache
 D:\Projects\C#\HvBS\Core\obj\Debug\netstandard2.0\Core.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\C#\HvBS\Core\obj\Debug\netstandard2.0\Core.AssemblyInfoInputs.cache
@@ -15,6 +18,3 @@ D:\Projects\C#\HvBS\Core\obj\Debug\netstandard2.0\Core.AssemblyInfo.cs
 D:\Projects\C#\HvBS\Core\obj\Debug\netstandard2.0\Core.csproj.CoreCompileInputs.cache
 D:\Projects\C#\HvBS\Core\obj\Debug\netstandard2.0\Core.dll
 D:\Projects\C#\HvBS\Core\obj\Debug\netstandard2.0\Core.pdb
-D:\Projects\C#\HvBS\Core\bin\Debug\netstandard2.0\Core.deps.json
-D:\Projects\C#\HvBS\Core\bin\Debug\netstandard2.0\Core.dll
-D:\Projects\C#\HvBS\Core\bin\Debug\netstandard2.0\Core.pdb
