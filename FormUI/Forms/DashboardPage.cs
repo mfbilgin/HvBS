@@ -111,7 +111,7 @@ namespace FormUI.Forms
 
         private void button_logout_Click(object sender, EventArgs e)
         {
-            LoginPage loginPage = new LoginPage(_authService, _userService, _userOperationClaimService, _recordService);
+            LoginPage loginPage = new LoginPage(_authService, _userService, _userOperationClaimService, _recordService,_partStatusService);
             Hide();
             loginPage.ShowDialog();
             Close();

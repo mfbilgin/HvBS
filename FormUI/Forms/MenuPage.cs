@@ -52,7 +52,7 @@ namespace FormUI.Forms
 
         private void button_emergency_record_Click(object sender, EventArgs e)
         {
-            DashboardPage dashboardPage = new DashboardPage(_hvBsNumber,_userService,_recordService,_userOperationClaimService,_authService);
+            DashboardPage dashboardPage = new DashboardPage(_hvBsNumber,_userService,_recordService,_userOperationClaimService,_authService,_partStatusService);
             Hide();
             dashboardPage.ShowDialog();
             Close();
@@ -60,7 +60,7 @@ namespace FormUI.Forms
 
         private void button_logout_Click(object sender, EventArgs e)
         {
-            LoginPage loginPage = new LoginPage(_authService, _userService, _userOperationClaimService, _recordService);
+            LoginPage loginPage = new LoginPage(_authService, _userService, _userOperationClaimService, _recordService, _partStatusService);
             Hide();
             loginPage.ShowDialog();
             Close();
