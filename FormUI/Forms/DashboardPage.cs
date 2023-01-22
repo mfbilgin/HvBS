@@ -19,10 +19,11 @@ namespace FormUI.Forms
         private readonly IUserService _userService;
         private readonly IRecordService _recordService;
         private readonly IUserOperationClaimService _userOperationClaimService;
+        private readonly IPartStatusService _partStatusService;
         private readonly IAuthService _authService;
         private readonly int _claimId;
         private bool isCollapsed = true;
-        public DashboardPage(string hvBSNumber, IUserService userService, IRecordService recordService,IUserOperationClaimService userOperationClaimService, IAuthService authService)
+        public DashboardPage(string hvBSNumber, IUserService userService, IRecordService recordService,IUserOperationClaimService userOperationClaimService, IAuthService authService, IPartStatusService partStatusService)
         {
             InitializeComponent();
             HvBSNumber = hvBSNumber;
@@ -31,6 +32,7 @@ namespace FormUI.Forms
             _userOperationClaimService = userOperationClaimService;
             _authService = authService;
             _claimId = _userOperationClaimService.GetByUserId(_userService.GetByHvBSNumber(hvBSNumber).Data.UserId).Data.OperationClaimId;
+            _partStatusService = partStatusService;
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -163,7 +165,7 @@ namespace FormUI.Forms
         private void button_part_need_Click(object sender, EventArgs e)
         {
             SetButtonColor(button_part_need);
-            AddControls(new PartAddControl());
+            AddControls(new PartAddControl(_partStatusService,_claimId));
         }
     }
 }

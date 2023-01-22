@@ -16,8 +16,9 @@ namespace FormUI.Forms
         private readonly IUserService _userService;
         private readonly IRecordService _recordService;
         private readonly IUserOperationClaimService _userOperationClaimService;
+        private readonly IPartStatusService _partStatusService;
         private readonly IAuthService _authService;
-        public MenuPage(string hvBsNumber,IUserService userService, IRecordService recordService, IUserOperationClaimService userOperationClaimService, IAuthService authService)
+        public MenuPage(string hvBsNumber,IUserService userService, IRecordService recordService, IUserOperationClaimService userOperationClaimService, IAuthService authService,IPartStatusService partStatusService)
         {
             InitializeComponent();
             _hvBsNumber = hvBsNumber;
@@ -25,9 +26,7 @@ namespace FormUI.Forms
             _userOperationClaimService = userOperationClaimService;
             _recordService = recordService;
             _authService = authService;
-            label_emergency_record_number.Text = _recordService.GetAllEmergencyRecord().Data.Count.ToString();
-            label_ongoing_care_record_number.Text = _recordService.GetAllContinuingRecord().Data.Count.ToString();
-            label_waiting_care_record_number.Text = _recordService.GetAllWaitingRecord().Data.Count.ToString();
+            _partStatusService = partStatusService;
         }
 
         private void MenuPage_Load(object sender, EventArgs e)
@@ -36,6 +35,9 @@ namespace FormUI.Forms
             label_name.Text = user.FirstName + @" " + user.LastName.ToUpper();
             label_rank.Text = user.Rank;
             label_HvBS.Text = $@"HvBS No: {user.HvBSNumber}";
+            label_emergency_record_number.Text = _recordService.GetAllEmergencyRecord().Data.Count.ToString();
+            label_ongoing_care_record_number.Text = _recordService.GetAllContinuingRecord().Data.Count.ToString();
+            label_waiting_care_record_number.Text = _recordService.GetAllWaitingRecord().Data.Count.ToString();
         }
 
         private void button_close_Click(object sender, EventArgs e)

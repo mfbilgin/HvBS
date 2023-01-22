@@ -12,13 +12,15 @@ namespace FormUI.Forms
         private readonly IUserService _userService;
         private readonly IUserOperationClaimService _userOperationClaimService;
         private readonly IRecordService _recordService;
-        public LoginPage(IAuthService authService, IUserService userService, IUserOperationClaimService userOperationClaimService, IRecordService recordService)
+        private readonly IPartStatusService _partStatusService;
+        public LoginPage(IAuthService authService, IUserService userService, IUserOperationClaimService userOperationClaimService, IRecordService recordService, IPartStatusService partStatusService)
         {
             _authService = authService;
             _userService = userService;
             _userOperationClaimService = userOperationClaimService;
             _recordService = recordService;
             InitializeComponent();
+            _partStatusService = partStatusService;
         }
 
         private void textBox_HvBS_Enter(object sender, EventArgs e)
@@ -72,7 +74,7 @@ namespace FormUI.Forms
             var result = _authService.Login(user);
             if (result.Success)
             {
-                MenuPage menuPage = new MenuPage(user.HvBSNumber, _userService, _recordService, _userOperationClaimService,_authService);
+                MenuPage menuPage = new MenuPage(user.HvBSNumber, _userService, _recordService, _userOperationClaimService,_authService,_partStatusService);
                 Hide();
                 menuPage.ShowDialog();
                 Close();

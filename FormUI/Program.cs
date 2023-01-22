@@ -49,7 +49,8 @@ namespace FormUI
                     services.AddTransient<IRecordService, RecordManager>();
                     services.AddTransient<IRecordDal, EfRecordDal>();
 
-
+                    services.AddTransient<IPartStatusService, PartStatusManager>();
+                    services.AddTransient<IPartStatusDal, EfPartStatusDal>();
                 });
         }
     }
