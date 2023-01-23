@@ -99,7 +99,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Record>(_recordDal.Get(record => record.AircraftSerialNumber == aircraftNumber && record.Trouble == trouble));
         }
-        public bool CheckIfRecordExist(string aircraftNumber,string trouble)
+        private bool CheckIfRecordExist(string aircraftNumber,string trouble)
         {
             var result = _recordDal.Get(record => record.AircraftSerialNumber == aircraftNumber && record.Trouble == trouble);
             if (result != null) return false;

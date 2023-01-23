@@ -32,6 +32,9 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<PartStatusManager>().As<IPartStatusService>().SingleInstance();
             builder.RegisterType<EfPartStatusDal>().As<IPartStatusDal>().SingleInstance();
 
+            builder.RegisterType<MaintenanceTypeManager>().As<IMaintenanceTypeService>().SingleInstance();
+            builder.RegisterType<EfMaintenanceTypeDal>().As<IMaintenanceTypeDal>().SingleInstance();
+            
             builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

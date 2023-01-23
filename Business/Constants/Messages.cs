@@ -27,6 +27,17 @@
         public const string PartStatusDeleted = "Parça Kaydı Başarıyla Silindi.";
         public const string PartStatusUpdated = "Parça Kaydı Başarıyla Güncellendi.";
         public const string PartStatusAlreadyExist = "Bu Parça Kaydı Zaten Mevcut.";
+        
+        public const string MaintenanceTypeExist = "Bu Bakım Tipi Zaten Mevcut.";
+        public const string MaintenanceTypeAdded = "Bakım Tipi Eklendi.";
+        public const string MaintenanceTypeDeleted = "Bakım Tipi Silindi.";
+        public const string MaintenanceTypeUpdated = "Bakım Tipi Güncellendi.";
+        
+        public const string BaseExist = "Bu Üs Zaten Mevcut.";
+        public const string BaseAdded = "Üs Eklendi.";
+        public const string BaseDeleted = "Üs Silindi.";
+        public const string BaseUpdated = "Üs Güncellendi.";
+
 
     }
 }
