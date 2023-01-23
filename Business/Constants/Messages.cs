@@ -11,6 +11,8 @@
         public const string HvBsNumberError = "HvBS Numarası Hatalı!";
         public const string PasswordError = "Parola Hatalı!";
         public const string PasswordReset = "Parolanız HvBS Numaranız Olarak Değiştirildi.";
+        public const string PasswordChanged = "Parolanız Başarıyla Değiştirildi.";
+        public const string PasswordSame = "Eski Parola ile Yeni Parola Aynı.";
 
         public const string ClaimAdded = "Rol Eklendi.";
         
