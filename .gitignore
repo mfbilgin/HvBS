@@ -13,3 +13,6 @@
 /dataSources.local.xml
 /dataSources.xml
 /encodings.xml
+.idea/
+.vs/
+*.sln
