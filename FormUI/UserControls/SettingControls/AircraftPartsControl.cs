@@ -13,6 +13,6 @@ namespace FormUI.SettingControls
         public AircraftPartsControl()
         {
             InitializeComponent();
-        }//MFBILGIN.NET
+        }
     }
 }
