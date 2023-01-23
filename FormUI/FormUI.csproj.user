@@ -20,10 +20,16 @@
     <Compile Update="Forms\RegisterPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SettingControls\AircraftPartsControl.cs">
+    <Compile Update="UserControls\SettingControls\AircraftPartsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="SettingControls\PasswordChangeControl.cs">
+    <Compile Update="UserControls\SettingControls\BaseManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\SettingControls\MaintenanceTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\SettingControls\PasswordChangeControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\ProccessControl\PartAddControl.cs">

@@ -217,11 +217,13 @@ namespace FormUI.Forms
         private void button_base_management_Click(object sender, EventArgs e)
         {
             SetButtonColor(button_base_management);
+            AddControls(new BaseManagementControl());
         }
 
         private void button_type_of_maintenance_Click(object sender, EventArgs e)
         {
             SetButtonColor(button_type_of_maintenance);
+            AddControls(new MaintenanceTypeControl());
         }
 
         private void button_aircraft_parts_Click(object sender, EventArgs e)
