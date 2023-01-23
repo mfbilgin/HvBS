@@ -41,6 +41,9 @@
     <Compile Update="UserControls\ProccessControl\RecordUpdateControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControls\ViewControls\PartStatusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\ViewControls\WaitingRecordControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

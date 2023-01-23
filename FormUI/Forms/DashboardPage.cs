@@ -22,8 +22,9 @@ namespace FormUI.Forms
         private readonly IPartStatusService _partStatusService;
         private readonly IAuthService _authService;
         private readonly int _claimId;
-        private bool isCollapsed = true;
-        public DashboardPage(string hvBSNumber, IUserService userService, IRecordService recordService,IUserOperationClaimService userOperationClaimService, IAuthService authService, IPartStatusService partStatusService)
+        private bool isCollapsedProccess = true;
+        private bool isCollapsedMaintenance = true;
+        public DashboardPage(string hvBSNumber, IUserService userService, IRecordService recordService, IUserOperationClaimService userOperationClaimService, IAuthService authService, IPartStatusService partStatusService)
         {
             InitializeComponent();
             HvBSNumber = hvBSNumber;
@@ -76,42 +77,22 @@ namespace FormUI.Forms
             userControl.BringToFront();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (isCollapsed)
-            {
-                panel_dropdown.Height += 10;
-                if (panel_dropdown.Size == panel_dropdown.MaximumSize)
-                {
-                    timer1.Stop();
-                    isCollapsed = false;
-                }
-            }
-            else
-            {
-                panel_dropdown.Height -= 10;
-                if (panel_dropdown.Size == panel_dropdown.MinimumSize)
-                {
-                    timer1.Stop();
-                    isCollapsed = true;
-                }
-            } 
-        }
+
 
         private void button_record_proccess_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            timer_proccess.Start();
         }
 
         private void button_add_record_Click(object sender, EventArgs e)
         {
             SetButtonColor(button_add_record);
-            AddControls(new RecordAddControl(_recordService,HvBSNumber,_userService,_userOperationClaimService));
+            AddControls(new RecordAddControl(_recordService, HvBSNumber, _userService, _userOperationClaimService));
         }
 
         private void button_logout_Click(object sender, EventArgs e)
         {
-            LoginPage loginPage = new LoginPage(_authService, _userService, _userOperationClaimService, _recordService,_partStatusService);
+            LoginPage loginPage = new LoginPage(_authService, _userService, _userOperationClaimService, _recordService, _partStatusService);
             Hide();
             loginPage.ShowDialog();
             Close();
@@ -122,7 +103,7 @@ namespace FormUI.Forms
             SetButtonColor(button_countuing);
             AddControls(new OngoingMaintenanceRecordControl(_recordService));
         }
-       
+
 
         private void button_waiting_record_Click(object sender, EventArgs e)
         {
@@ -141,13 +122,14 @@ namespace FormUI.Forms
             button_add_record.BackColor = Color.FromArgb(53, 67, 137);
             button_update_record.BackColor = Color.FromArgb(53, 67, 137);
             button_delete_record.BackColor = Color.FromArgb(53, 67, 137);
+            button_part_add.BackColor = Color.FromArgb(53, 67, 137);
             selectedButton.BackColor = Color.Black;
         }
 
         private void button_update_record_Click(object sender, EventArgs e)
         {
             SetButtonColor(button_update_record);
-            AddControls(new RecordUpdateControl(_recordService,_claimId));
+            AddControls(new RecordUpdateControl(_recordService, _claimId));
         }
 
         private void button_delete_record_Click(object sender, EventArgs e)
@@ -162,10 +144,68 @@ namespace FormUI.Forms
             AddControls(new CompletedRecordControl(_recordService));
         }
 
-        private void button_part_need_Click(object sender, EventArgs e)
+        private void button_part_add_Click(object sender, EventArgs e)
         {
-            SetButtonColor(button_part_need);
-            AddControls(new PartAddControl(_partStatusService,_claimId));
+            SetButtonColor(button_part_add);
+            AddControls(new PartAddControl(_partStatusService, _claimId));
+        }
+
+        private void button_parts_status_Click(object sender, EventArgs e)
+        {
+            SetButtonColor(button_parts_status);
+            AddControls(new PartStatusControl(_partStatusService));
+        }
+
+        private void button_maintance_settings_Click(object sender, EventArgs e)
+        {
+            timer_maintenance.Start();
+        }
+
+        private void timer_maintenance_Tick(object sender, EventArgs e)
+        {
+            if (isCollapsedMaintenance)
+            {
+                panel_dropdown_maintenance_setting.Height += 10;
+                if (panel_dropdown_maintenance_setting.Size == panel_dropdown_maintenance_setting.MaximumSize)
+                {
+                    timer_maintenance.Stop();
+                    isCollapsedMaintenance = false;
+                }
+            }
+            else
+            {
+                panel_dropdown_maintenance_setting.Height -= 10;
+                if (panel_dropdown_maintenance_setting.Size == panel_dropdown_maintenance_setting.MinimumSize)
+                {
+                    timer_maintenance.Stop();
+                    isCollapsedMaintenance = true;
+                }
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (isCollapsedProccess)
+            {
+                panel_dropdown_record_proccess.Height += 10;
+                if (panel_dropdown_record_proccess.Size == panel_dropdown_record_proccess.MaximumSize)
+                {
+                    timer_proccess.Stop();
+                    isCollapsedProccess = false;
+                }
+            }
+            else
+            {
+                panel_dropdown_record_proccess.Height -= 10;
+                if (panel_dropdown_record_proccess.Size == panel_dropdown_record_proccess.MinimumSize)
+                {
+                    timer_proccess.Stop();
+                    isCollapsedProccess = true;
+                }
+            }
+        }
+        private void button_reports_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
