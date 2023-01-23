@@ -7,7 +7,7 @@ namespace Business.Abstract
     {
         IResult Register(UserForRegisterDto userForRegisterDto);
         IResult Login(UserForLoginDto userForLoginDto);
+        IResult ChangePassword(UserForPasswordChangeDto userForPasswordChange);
         IResult PasswordReset(UserForPasswordResetDto userForPasswordResetDto);
-        IResult ChangePassword(UserForPasswordResetDto userForPasswordResetDto);
     }
 }

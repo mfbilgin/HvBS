@@ -22,50 +22,74 @@ namespace FormUI.UserControls.ViewControls
         private void PartStatusControl_Load(object sender, EventArgs e)
         {
             List<PartStatus> partStatuses = _partStatusService.GetAll().Data;
-
-            flowLayoutPanel.Controls.Clear();
-            foreach (PartStatus partStatus in partStatuses)
+            if (partStatuses.Count > 0)
             {
+
+
+                flowLayoutPanel.Controls.Clear();
+                foreach (PartStatus partStatus in partStatuses)
+                {
+                    GroupBox groupBox = new GroupBox()
+                    {
+                        Text = "",
+                        Width = 1604,
+                        Height = 60,
+                    };
+                    Label label_waiting_aircraft_number = new Label()
+                    {
+                        AutoSize = true,
+                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                        ForeColor = Color.FromArgb(152, 152, 152),
+                    };
+                    Label label_part_number = new Label()
+                    {
+                        AutoSize = true,
+                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                        ForeColor = Color.FromArgb(152, 152, 152),
+                    };
+                    Label label_stock_status = new Label()
+                    {
+                        AutoSize = true,
+                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                        ForeColor = Color.FromArgb(152, 152, 152),
+                    };
+
+
+
+                    label_waiting_aircraft.Text = partStatus.WaitingAircraftNumber;
+                    SetLocation(label_waiting_aircraft, label_waiting_aircraft_title, groupBox);
+
+                    label_part_number.Text = partStatus.PartNumber;
+                    SetLocation(label_part_number, label_part_number_title, groupBox);
+
+                    label_stock_status.Text = partStatus.StockStatus ? "VAR" : "YOK";
+                    SetLocation(label_stock_status, label_stock_status_title, groupBox);
+
+                    flowLayoutPanel.Controls.Add(groupBox);
+                    groupBox.Controls.Add(label_waiting_aircraft);
+                    groupBox.Controls.Add(label_part_number);
+                    groupBox.Controls.Add(label_stock_status);
+                }
+            }
+            else
+            {
+                flowLayoutPanel.Visible = false;
                 GroupBox groupBox = new GroupBox()
                 {
                     Text = "",
                     Width = 1604,
-                    Height = 60,
+                    Height = 897,
                 };
-                Label label_waiting_aircraft_number = new Label()
+                Label label_not_found = new Label()
                 {
+                    Text = "Herhangi Bir Kayıt Bulunamadı",
                     AutoSize = true,
-                    Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                    Font = new Font(FontFamily.GenericSansSerif, 40.0F),
                     ForeColor = Color.FromArgb(152, 152, 152),
+                    Location = new Point(339, 407)
                 };
-                Label label_part_number = new Label()
-                {
-                    AutoSize = true,
-                    Font = new Font(FontFamily.GenericSansSerif, 10.0F),
-                    ForeColor = Color.FromArgb(152, 152, 152),
-                };
-                Label label_stock_status = new Label()
-                {
-                    AutoSize = true,
-                    Font = new Font(FontFamily.GenericSansSerif, 10.0F),
-                    ForeColor = Color.FromArgb(152, 152, 152),
-                };
-
-
-
-                label_waiting_aircraft.Text = partStatus.WaitingAircraftNumber;
-                SetLocation(label_waiting_aircraft, label_waiting_aircraft_title, groupBox);
-
-                label_part_number.Text = partStatus.PartNumber;
-                SetLocation(label_part_number, label_part_number_title, groupBox);
-
-                label_stock_status.Text = partStatus.StockStatus ? "VAR" : "YOK";
-                SetLocation(label_stock_status, label_stock_status_title, groupBox);
-
-                flowLayoutPanel.Controls.Add(groupBox);
-                groupBox.Controls.Add(label_waiting_aircraft);
-                groupBox.Controls.Add(label_part_number);
-                groupBox.Controls.Add(label_stock_status);
+                Controls.Add(groupBox);
+                groupBox.Controls.Add(label_not_found);
             }
 
         }

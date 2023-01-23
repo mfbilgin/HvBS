@@ -16,7 +16,7 @@ namespace Business.Concrete
             _userService = userService;
         }
         
-        public IResult ChangePassword(UserForPasswordResetDto userForPasswordResetDto)
+        public IResult PasswordReset(UserForPasswordResetDto userForPasswordResetDto)
         {
             byte[] passwordHash, passwordSalt;
             User userToCheck = _userService.GetByHvBSNumber(userForPasswordResetDto.HvBSNumber).Data;
@@ -24,7 +24,6 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.HvBsNumberError);
             }
-
             HashingHelper.CreatePasswordHash(userForPasswordResetDto.HvBSNumber, out passwordHash, out passwordSalt);
             userToCheck.PasswordHash = passwordHash;
             userToCheck.PasswordSalt = passwordSalt;
@@ -46,13 +45,25 @@ namespace Business.Concrete
             return new SuccessResult(Messages.LoginSuccessful);
         }
 
-        public IResult PasswordReset(UserForPasswordResetDto userForPasswordResetDto)
+        public IResult ChangePassword(UserForPasswordChangeDto userForPasswordChangeDto)
         {
-            User userToCheck = _userService.GetByHvBSNumber(userForPasswordResetDto.HvBSNumber).Data;
+            User userToCheck = _userService.GetByHvBSNumber(userForPasswordChangeDto.HvBSNumber).Data;
+            byte[] passwordHash, passwordSalt;
             if (userToCheck == null)
                 return new ErrorResult(Messages.HvBsNumberError);
-            var result = ChangePassword(userForPasswordResetDto);
-            return new SuccessResult(result.Message);
+            if (!HashingHelper.VerifyPasswordHash(userForPasswordChangeDto.OldPassword, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            {
+                return new ErrorResult(Messages.PasswordError);
+            }
+            if (userForPasswordChangeDto.OldPassword == userForPasswordChangeDto.NewPassword)
+            {
+                return new ErrorResult(Messages.PasswordSame);
+            }
+            HashingHelper.CreatePasswordHash(userForPasswordChangeDto.NewPassword, out passwordHash, out passwordSalt);
+            userToCheck.PasswordHash = passwordHash;
+            userToCheck.PasswordSalt = passwordSalt;
+            _userService.Update(userToCheck);
+            return new SuccessResult(Messages.PasswordChanged);
         }
 
         public IResult Register(UserForRegisterDto userForRegisterDto)

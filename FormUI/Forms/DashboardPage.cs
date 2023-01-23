@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Entities.Concrete;
+using FormUI.SettingControls;
 using FormUI.UserControls;
 using FormUI.UserControls.ProccessControl;
 using FormUI.UserControls.ViewControls;
@@ -123,6 +124,10 @@ namespace FormUI.Forms
             button_update_record.BackColor = Color.FromArgb(53, 67, 137);
             button_delete_record.BackColor = Color.FromArgb(53, 67, 137);
             button_part_add.BackColor = Color.FromArgb(53, 67, 137);
+            button_base_management.BackColor = Color.FromArgb(53, 67, 137);
+            button_type_of_maintenance.BackColor = Color.FromArgb(53, 67, 137);
+            button_aircraft_parts.BackColor = Color.FromArgb(53, 67, 137);
+            button_user_proccess.BackColor = Color.FromArgb(53, 67, 137);
             selectedButton.BackColor = Color.Black;
         }
 
@@ -205,7 +210,30 @@ namespace FormUI.Forms
         }
         private void button_reports_Click(object sender, EventArgs e)
         {
+            SetButtonColor(button_reports);
+            AddControls(new ReportControl());
+        }
 
+        private void button_base_management_Click(object sender, EventArgs e)
+        {
+            SetButtonColor(button_base_management);
+        }
+
+        private void button_type_of_maintenance_Click(object sender, EventArgs e)
+        {
+            SetButtonColor(button_type_of_maintenance);
+        }
+
+        private void button_aircraft_parts_Click(object sender, EventArgs e)
+        {
+            SetButtonColor(button_aircraft_parts);
+            AddControls(new AircraftPartsControl()); ;
+        }
+
+        private void button_user_proccess_Click(object sender, EventArgs e)
+        {
+            SetButtonColor(button_user_proccess);
+            AddControls(new PasswordChangeControl(_authService,HvBSNumber));
         }
     }
 }

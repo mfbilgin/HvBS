@@ -46,10 +46,10 @@
             this.button_parts_status = new System.Windows.Forms.Button();
             this.button_completed_record = new System.Windows.Forms.Button();
             this.panel_dropdown_maintenance_setting = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.button_aircraft_parts = new System.Windows.Forms.Button();
             this.button_maintance_settings = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_type_of_maintenance = new System.Windows.Forms.Button();
+            this.button_base_management = new System.Windows.Forms.Button();
             this.button_reports = new System.Windows.Forms.Button();
             this.panel_dropdown_record_proccess = new System.Windows.Forms.Panel();
             this.button_record_proccess = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.button_delete_record = new System.Windows.Forms.Button();
             this.button_update_record = new System.Windows.Forms.Button();
             this.button_add_record = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button_user_proccess = new System.Windows.Forms.Button();
             this.label_rank = new System.Windows.Forms.TextBox();
             this.label_HvBS = new System.Windows.Forms.Label();
             this.label_name = new System.Windows.Forms.Label();
@@ -210,6 +210,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(212)))), ((int)(((byte)(218)))));
             this.flowLayoutPanel1.Controls.Add(this.button_emergency_record);
             this.flowLayoutPanel1.Controls.Add(this.button_countuing);
@@ -219,10 +220,11 @@
             this.flowLayoutPanel1.Controls.Add(this.panel_dropdown_maintenance_setting);
             this.flowLayoutPanel1.Controls.Add(this.button_reports);
             this.flowLayoutPanel1.Controls.Add(this.panel_dropdown_record_proccess);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 245);
+            this.flowLayoutPanel1.Controls.Add(this.button_user_proccess);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 277);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(297, 835);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(297, 803);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // button_emergency_record
@@ -232,7 +234,7 @@
             this.button_emergency_record.ForeColor = System.Drawing.Color.White;
             this.button_emergency_record.Location = new System.Drawing.Point(3, 3);
             this.button_emergency_record.Name = "button_emergency_record";
-            this.button_emergency_record.Size = new System.Drawing.Size(294, 49);
+            this.button_emergency_record.Size = new System.Drawing.Size(275, 49);
             this.button_emergency_record.TabIndex = 27;
             this.button_emergency_record.Text = "   ・ACİL Kodlu Kayıtlar";
             this.button_emergency_record.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -246,7 +248,7 @@
             this.button_countuing.ForeColor = System.Drawing.Color.White;
             this.button_countuing.Location = new System.Drawing.Point(3, 58);
             this.button_countuing.Name = "button_countuing";
-            this.button_countuing.Size = new System.Drawing.Size(294, 49);
+            this.button_countuing.Size = new System.Drawing.Size(275, 49);
             this.button_countuing.TabIndex = 26;
             this.button_countuing.Text = "   ・Bakımı Devam Eden Kayıtlar";
             this.button_countuing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,7 +262,7 @@
             this.button_waiting_record.ForeColor = System.Drawing.Color.White;
             this.button_waiting_record.Location = new System.Drawing.Point(3, 113);
             this.button_waiting_record.Name = "button_waiting_record";
-            this.button_waiting_record.Size = new System.Drawing.Size(294, 49);
+            this.button_waiting_record.Size = new System.Drawing.Size(275, 49);
             this.button_waiting_record.TabIndex = 25;
             this.button_waiting_record.Text = "   ・Bakım İçin Bekleyen Kayıtlar";
             this.button_waiting_record.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,7 +276,7 @@
             this.button_parts_status.ForeColor = System.Drawing.Color.White;
             this.button_parts_status.Location = new System.Drawing.Point(3, 168);
             this.button_parts_status.Name = "button_parts_status";
-            this.button_parts_status.Size = new System.Drawing.Size(294, 49);
+            this.button_parts_status.Size = new System.Drawing.Size(275, 49);
             this.button_parts_status.TabIndex = 24;
             this.button_parts_status.Text = "   ・Yedek Parça Durumu";
             this.button_parts_status.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -288,7 +290,7 @@
             this.button_completed_record.ForeColor = System.Drawing.Color.White;
             this.button_completed_record.Location = new System.Drawing.Point(3, 223);
             this.button_completed_record.Name = "button_completed_record";
-            this.button_completed_record.Size = new System.Drawing.Size(294, 49);
+            this.button_completed_record.Size = new System.Drawing.Size(275, 49);
             this.button_completed_record.TabIndex = 23;
             this.button_completed_record.Text = "   ・Tamamlanmış Kayıtlar";
             this.button_completed_record.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -297,29 +299,30 @@
             // 
             // panel_dropdown_maintenance_setting
             // 
-            this.panel_dropdown_maintenance_setting.Controls.Add(this.button4);
+            this.panel_dropdown_maintenance_setting.Controls.Add(this.button_aircraft_parts);
             this.panel_dropdown_maintenance_setting.Controls.Add(this.button_maintance_settings);
-            this.panel_dropdown_maintenance_setting.Controls.Add(this.button3);
-            this.panel_dropdown_maintenance_setting.Controls.Add(this.button1);
+            this.panel_dropdown_maintenance_setting.Controls.Add(this.button_type_of_maintenance);
+            this.panel_dropdown_maintenance_setting.Controls.Add(this.button_base_management);
             this.panel_dropdown_maintenance_setting.Location = new System.Drawing.Point(3, 278);
-            this.panel_dropdown_maintenance_setting.MaximumSize = new System.Drawing.Size(291, 222);
-            this.panel_dropdown_maintenance_setting.MinimumSize = new System.Drawing.Size(291, 56);
+            this.panel_dropdown_maintenance_setting.MaximumSize = new System.Drawing.Size(278, 222);
+            this.panel_dropdown_maintenance_setting.MinimumSize = new System.Drawing.Size(278, 56);
             this.panel_dropdown_maintenance_setting.Name = "panel_dropdown_maintenance_setting";
-            this.panel_dropdown_maintenance_setting.Size = new System.Drawing.Size(291, 222);
+            this.panel_dropdown_maintenance_setting.Size = new System.Drawing.Size(278, 222);
             this.panel_dropdown_maintenance_setting.TabIndex = 29;
             // 
-            // button4
+            // button_aircraft_parts
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(98, 163);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(196, 47);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "・Uçak Parçaları";
-            this.button4.UseVisualStyleBackColor = false;
+            this.button_aircraft_parts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.button_aircraft_parts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_aircraft_parts.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_aircraft_parts.ForeColor = System.Drawing.Color.White;
+            this.button_aircraft_parts.Location = new System.Drawing.Point(95, 164);
+            this.button_aircraft_parts.Name = "button_aircraft_parts";
+            this.button_aircraft_parts.Size = new System.Drawing.Size(177, 47);
+            this.button_aircraft_parts.TabIndex = 31;
+            this.button_aircraft_parts.Text = "・Uçak Parçaları";
+            this.button_aircraft_parts.UseVisualStyleBackColor = false;
+            this.button_aircraft_parts.Click += new System.EventHandler(this.button_aircraft_parts_Click);
             // 
             // button_maintance_settings
             // 
@@ -328,38 +331,40 @@
             this.button_maintance_settings.ForeColor = System.Drawing.Color.White;
             this.button_maintance_settings.Location = new System.Drawing.Point(0, 3);
             this.button_maintance_settings.Name = "button_maintance_settings";
-            this.button_maintance_settings.Size = new System.Drawing.Size(294, 49);
+            this.button_maintance_settings.Size = new System.Drawing.Size(275, 49);
             this.button_maintance_settings.TabIndex = 22;
             this.button_maintance_settings.Text = "   ・Bakım Onarım Ayarları";
             this.button_maintance_settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_maintance_settings.UseVisualStyleBackColor = false;
             this.button_maintance_settings.Click += new System.EventHandler(this.button_maintance_settings_Click);
             // 
-            // button3
+            // button_type_of_maintenance
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(98, 111);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(196, 47);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "・Bakım Tipleri";
-            this.button3.UseVisualStyleBackColor = false;
+            this.button_type_of_maintenance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.button_type_of_maintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_type_of_maintenance.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_type_of_maintenance.ForeColor = System.Drawing.Color.White;
+            this.button_type_of_maintenance.Location = new System.Drawing.Point(95, 111);
+            this.button_type_of_maintenance.Name = "button_type_of_maintenance";
+            this.button_type_of_maintenance.Size = new System.Drawing.Size(177, 47);
+            this.button_type_of_maintenance.TabIndex = 30;
+            this.button_type_of_maintenance.Text = "・Bakım Tipleri";
+            this.button_type_of_maintenance.UseVisualStyleBackColor = false;
+            this.button_type_of_maintenance.Click += new System.EventHandler(this.button_type_of_maintenance_Click);
             // 
-            // button1
+            // button_base_management
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(98, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 47);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "・Üs Yönetimi";
-            this.button1.UseVisualStyleBackColor = false;
+            this.button_base_management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.button_base_management.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_base_management.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_base_management.ForeColor = System.Drawing.Color.White;
+            this.button_base_management.Location = new System.Drawing.Point(95, 58);
+            this.button_base_management.Name = "button_base_management";
+            this.button_base_management.Size = new System.Drawing.Size(177, 47);
+            this.button_base_management.TabIndex = 29;
+            this.button_base_management.Text = "・Üs Yönetimi";
+            this.button_base_management.UseVisualStyleBackColor = false;
+            this.button_base_management.Click += new System.EventHandler(this.button_base_management_Click);
             // 
             // button_reports
             // 
@@ -368,7 +373,7 @@
             this.button_reports.ForeColor = System.Drawing.Color.White;
             this.button_reports.Location = new System.Drawing.Point(3, 506);
             this.button_reports.Name = "button_reports";
-            this.button_reports.Size = new System.Drawing.Size(294, 49);
+            this.button_reports.Size = new System.Drawing.Size(275, 49);
             this.button_reports.TabIndex = 21;
             this.button_reports.Text = "   ・Raporlar";
             this.button_reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -384,10 +389,10 @@
             this.panel_dropdown_record_proccess.Controls.Add(this.button_update_record);
             this.panel_dropdown_record_proccess.Controls.Add(this.button_add_record);
             this.panel_dropdown_record_proccess.Location = new System.Drawing.Point(3, 561);
-            this.panel_dropdown_record_proccess.MaximumSize = new System.Drawing.Size(294, 275);
-            this.panel_dropdown_record_proccess.MinimumSize = new System.Drawing.Size(294, 55);
+            this.panel_dropdown_record_proccess.MaximumSize = new System.Drawing.Size(278, 275);
+            this.panel_dropdown_record_proccess.MinimumSize = new System.Drawing.Size(278, 55);
             this.panel_dropdown_record_proccess.Name = "panel_dropdown_record_proccess";
-            this.panel_dropdown_record_proccess.Size = new System.Drawing.Size(294, 55);
+            this.panel_dropdown_record_proccess.Size = new System.Drawing.Size(278, 55);
             this.panel_dropdown_record_proccess.TabIndex = 28;
             // 
             // button_record_proccess
@@ -399,7 +404,7 @@
             this.button_record_proccess.ForeColor = System.Drawing.Color.White;
             this.button_record_proccess.Location = new System.Drawing.Point(0, 0);
             this.button_record_proccess.Name = "button_record_proccess";
-            this.button_record_proccess.Size = new System.Drawing.Size(291, 49);
+            this.button_record_proccess.Size = new System.Drawing.Size(272, 49);
             this.button_record_proccess.TabIndex = 17;
             this.button_record_proccess.Text = "・Kayıt İşlemleri";
             this.button_record_proccess.UseVisualStyleBackColor = false;
@@ -416,7 +421,7 @@
             this.button_part_add.ForeColor = System.Drawing.Color.White;
             this.button_part_add.Location = new System.Drawing.Point(95, 218);
             this.button_part_add.Name = "button_part_add";
-            this.button_part_add.Size = new System.Drawing.Size(196, 50);
+            this.button_part_add.Size = new System.Drawing.Size(174, 50);
             this.button_part_add.TabIndex = 15;
             this.button_part_add.Text = "・Parça Ekle";
             this.button_part_add.UseVisualStyleBackColor = false;
@@ -433,7 +438,7 @@
             this.button_delete_record.ForeColor = System.Drawing.Color.White;
             this.button_delete_record.Location = new System.Drawing.Point(95, 164);
             this.button_delete_record.Name = "button_delete_record";
-            this.button_delete_record.Size = new System.Drawing.Size(196, 50);
+            this.button_delete_record.Size = new System.Drawing.Size(174, 50);
             this.button_delete_record.TabIndex = 15;
             this.button_delete_record.Text = "・Kayıt Sil";
             this.button_delete_record.UseVisualStyleBackColor = false;
@@ -450,7 +455,7 @@
             this.button_update_record.ForeColor = System.Drawing.Color.White;
             this.button_update_record.Location = new System.Drawing.Point(95, 108);
             this.button_update_record.Name = "button_update_record";
-            this.button_update_record.Size = new System.Drawing.Size(196, 50);
+            this.button_update_record.Size = new System.Drawing.Size(174, 50);
             this.button_update_record.TabIndex = 16;
             this.button_update_record.Text = "・Kayıt Güncelle";
             this.button_update_record.UseVisualStyleBackColor = false;
@@ -467,24 +472,25 @@
             this.button_add_record.ForeColor = System.Drawing.Color.White;
             this.button_add_record.Location = new System.Drawing.Point(95, 55);
             this.button_add_record.Name = "button_add_record";
-            this.button_add_record.Size = new System.Drawing.Size(196, 47);
+            this.button_add_record.Size = new System.Drawing.Size(174, 47);
             this.button_add_record.TabIndex = 14;
             this.button_add_record.Text = "・Kayıt Ekle";
             this.button_add_record.UseVisualStyleBackColor = false;
             this.button_add_record.Click += new System.EventHandler(this.button_add_record_Click);
             // 
-            // button2
+            // button_user_proccess
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(3, 622);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(294, 49);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "   ・Kullanıcı İşlemleri";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.button_user_proccess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.button_user_proccess.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_user_proccess.ForeColor = System.Drawing.Color.White;
+            this.button_user_proccess.Location = new System.Drawing.Point(3, 622);
+            this.button_user_proccess.Name = "button_user_proccess";
+            this.button_user_proccess.Size = new System.Drawing.Size(275, 49);
+            this.button_user_proccess.TabIndex = 22;
+            this.button_user_proccess.Text = "   ・Parola Değiştirme";
+            this.button_user_proccess.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_user_proccess.UseVisualStyleBackColor = false;
+            this.button_user_proccess.Click += new System.EventHandler(this.button_user_proccess_Click);
             // 
             // label_rank
             // 
@@ -624,11 +630,11 @@
         private System.Windows.Forms.Button button_delete_record;
         private System.Windows.Forms.Button button_update_record;
         private System.Windows.Forms.Button button_add_record;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button_user_proccess;
         private System.Windows.Forms.Panel panel_dropdown_maintenance_setting;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_aircraft_parts;
+        private System.Windows.Forms.Button button_type_of_maintenance;
+        private System.Windows.Forms.Button button_base_management;
         private System.Windows.Forms.Timer timer_maintenance;
     }
 }

@@ -20,6 +20,12 @@
     <Compile Update="Forms\RegisterPage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SettingControls\AircraftPartsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SettingControls\PasswordChangeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControls\ProccessControl\PartAddControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -42,6 +48,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\ViewControls\PartStatusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ViewControls\ReportControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\ViewControls\WaitingRecordControl.cs">

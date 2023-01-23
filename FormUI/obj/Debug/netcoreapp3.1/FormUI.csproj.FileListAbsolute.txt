@@ -108,3 +108,6 @@ D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.csproj.CopyComplete
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.dll
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.pdb
 D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.genruntimeconfig.cache
+D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.UserControls.ViewControls.ReportControl.resources
+D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.SettingControls.AircraftPartsControl.resources
+D:\Projects\C#\HvBS\FormUI\obj\Debug\netcoreapp3.1\FormUI.SettingControls.PasswordChangeControl.resources
