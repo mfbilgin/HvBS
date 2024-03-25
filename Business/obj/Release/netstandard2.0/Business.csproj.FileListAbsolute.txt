@@ -1,0 +1,17 @@
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\Business.deps.json
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\Business.dll
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\Business.pdb
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\Core.dll
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\DataAccess.dll
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\Entities.dll
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\Core.pdb
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\DataAccess.pdb
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\bin\Release\netstandard2.0\Entities.pdb
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.csproj.AssemblyReference.cache
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.AssemblyInfoInputs.cache
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.AssemblyInfo.cs
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.csproj.CoreCompileInputs.cache
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.csproj.CopyComplete
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.dll
+C:\Users\GUNDOGDU\Desktop\HvBS\Business\obj\Release\netstandard2.0\Business.pdb

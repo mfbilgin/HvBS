@@ -1,0 +1,1 @@
+Server=MFBILGIN;Database=HvBSDatabase;Trusted_Connection=true
