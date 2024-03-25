@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\GUNDOGDU\Desktop\HvBS\FormUI\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Update="Forms\DashboardPage.cs">
       <SubType>Form</SubType>
@@ -20,7 +22,16 @@
     <Compile Update="Forms\RegisterPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserControls\SettingControls\AircraftPartsControl.cs">
+    <Compile Update="Forms\BaseAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\SelectMaintenanceCheifForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserControls\ProccessControl\PlaneAddControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\ReportControls\CompleteDetail.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserControls\SettingControls\BaseManagementControl.cs">

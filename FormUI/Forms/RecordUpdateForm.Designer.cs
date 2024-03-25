@@ -29,41 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecordUpdateForm));
-            this.textBox_aircraft = new System.Windows.Forms.TextBox();
             this.label_aircraft_title = new System.Windows.Forms.Label();
             this.textBox_trouble = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_reason_of_waiting = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_parts_need = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_register_staff = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox_identity_staff = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_maintenance_cheif = new System.Windows.Forms.TextBox();
             this.checkBox_emergency = new System.Windows.Forms.CheckBox();
             this.checkBox_waiting = new System.Windows.Forms.CheckBox();
             this.checkBox_completed = new System.Windows.Forms.CheckBox();
             this.button_mini = new System.Windows.Forms.Button();
             this.button_close_dashboard = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
+            this.comboBox_aircraft = new System.Windows.Forms.ComboBox();
+            this.comboBox_parts_need = new System.Windows.Forms.ComboBox();
+            this.comboBox_identity_staff = new System.Windows.Forms.ComboBox();
+            this.comboBox_maintenance_cheif = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textBox_aircraft
-            // 
-            this.textBox_aircraft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_aircraft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.textBox_aircraft.ForeColor = System.Drawing.Color.White;
-            this.textBox_aircraft.Location = new System.Drawing.Point(26, 78);
-            this.textBox_aircraft.Name = "textBox_aircraft";
-            this.textBox_aircraft.Size = new System.Drawing.Size(245, 27);
-            this.textBox_aircraft.TabIndex = 109;
-            this.textBox_aircraft.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_aircraft.TextChanged += new System.EventHandler(this.textBox_aircraft_TextChanged);
             // 
             // label_aircraft_title
             // 
@@ -129,20 +115,6 @@
             this.label2.TabIndex = 114;
             this.label2.Text = "Bekleme Sebebi";
             // 
-            // textBox_parts_need
-            // 
-            this.textBox_parts_need.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_parts_need.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.textBox_parts_need.ForeColor = System.Drawing.Color.White;
-            this.textBox_parts_need.Location = new System.Drawing.Point(26, 209);
-            this.textBox_parts_need.Name = "textBox_parts_need";
-            this.textBox_parts_need.Size = new System.Drawing.Size(245, 27);
-            this.textBox_parts_need.TabIndex = 115;
-            this.textBox_parts_need.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_parts_need.TextChanged += new System.EventHandler(this.textBox_parts_need_TextChanged);
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -194,20 +166,6 @@
             this.label5.TabIndex = 116;
             this.label5.Text = "Arızayı Tespit Eden";
             // 
-            // textBox_identity_staff
-            // 
-            this.textBox_identity_staff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_identity_staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.textBox_identity_staff.ForeColor = System.Drawing.Color.White;
-            this.textBox_identity_staff.Location = new System.Drawing.Point(735, 206);
-            this.textBox_identity_staff.Name = "textBox_identity_staff";
-            this.textBox_identity_staff.Size = new System.Drawing.Size(245, 27);
-            this.textBox_identity_staff.TabIndex = 115;
-            this.textBox_identity_staff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_identity_staff.TextChanged += new System.EventHandler(this.textBox_identity_staff_TextChanged);
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -219,20 +177,6 @@
             this.label6.Size = new System.Drawing.Size(79, 20);
             this.label6.TabIndex = 116;
             this.label6.Text = "Bakım Şefi";
-            // 
-            // textBox_maintenance_cheif
-            // 
-            this.textBox_maintenance_cheif.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_maintenance_cheif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.textBox_maintenance_cheif.ForeColor = System.Drawing.Color.White;
-            this.textBox_maintenance_cheif.Location = new System.Drawing.Point(382, 366);
-            this.textBox_maintenance_cheif.Name = "textBox_maintenance_cheif";
-            this.textBox_maintenance_cheif.Size = new System.Drawing.Size(245, 27);
-            this.textBox_maintenance_cheif.TabIndex = 115;
-            this.textBox_maintenance_cheif.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_maintenance_cheif.TextChanged += new System.EventHandler(this.textBox_maintenance_cheif_TextChanged);
             // 
             // checkBox_emergency
             // 
@@ -320,10 +264,54 @@
             this.button_update.UseVisualStyleBackColor = false;
             this.button_update.Click += new System.EventHandler(this.button_update_Click);
             // 
+            // comboBox_aircraft
+            // 
+            this.comboBox_aircraft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.comboBox_aircraft.ForeColor = System.Drawing.Color.White;
+            this.comboBox_aircraft.FormattingEnabled = true;
+            this.comboBox_aircraft.Location = new System.Drawing.Point(26, 78);
+            this.comboBox_aircraft.Name = "comboBox_aircraft";
+            this.comboBox_aircraft.Size = new System.Drawing.Size(245, 28);
+            this.comboBox_aircraft.TabIndex = 125;
+            // 
+            // comboBox_parts_need
+            // 
+            this.comboBox_parts_need.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.comboBox_parts_need.ForeColor = System.Drawing.Color.White;
+            this.comboBox_parts_need.FormattingEnabled = true;
+            this.comboBox_parts_need.Location = new System.Drawing.Point(26, 206);
+            this.comboBox_parts_need.Name = "comboBox_parts_need";
+            this.comboBox_parts_need.Size = new System.Drawing.Size(245, 28);
+            this.comboBox_parts_need.TabIndex = 125;
+            // 
+            // comboBox_identity_staff
+            // 
+            this.comboBox_identity_staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.comboBox_identity_staff.ForeColor = System.Drawing.Color.White;
+            this.comboBox_identity_staff.FormattingEnabled = true;
+            this.comboBox_identity_staff.Location = new System.Drawing.Point(735, 206);
+            this.comboBox_identity_staff.Name = "comboBox_identity_staff";
+            this.comboBox_identity_staff.Size = new System.Drawing.Size(245, 28);
+            this.comboBox_identity_staff.TabIndex = 125;
+            // 
+            // comboBox_maintenance_cheif
+            // 
+            this.comboBox_maintenance_cheif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.comboBox_maintenance_cheif.ForeColor = System.Drawing.Color.White;
+            this.comboBox_maintenance_cheif.FormattingEnabled = true;
+            this.comboBox_maintenance_cheif.Location = new System.Drawing.Point(382, 363);
+            this.comboBox_maintenance_cheif.Name = "comboBox_maintenance_cheif";
+            this.comboBox_maintenance_cheif.Size = new System.Drawing.Size(245, 28);
+            this.comboBox_maintenance_cheif.TabIndex = 125;
+            // 
             // RecordUpdateForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1020, 597);
+            this.Controls.Add(this.comboBox_maintenance_cheif);
+            this.Controls.Add(this.comboBox_identity_staff);
+            this.Controls.Add(this.comboBox_parts_need);
+            this.Controls.Add(this.comboBox_aircraft);
             this.Controls.Add(this.button_update);
             this.Controls.Add(this.button_mini);
             this.Controls.Add(this.button_close_dashboard);
@@ -332,17 +320,13 @@
             this.Controls.Add(this.checkBox_emergency);
             this.Controls.Add(this.textBox_register_staff);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox_maintenance_cheif);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox_identity_staff);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox_parts_need);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_reason_of_waiting);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_trouble);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox_aircraft);
             this.Controls.Add(this.label_aircraft_title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RecordUpdateForm";
@@ -355,25 +339,25 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox_aircraft;
         private System.Windows.Forms.Label label_aircraft_title;
         private System.Windows.Forms.TextBox textBox_trouble;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_reason_of_waiting;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_parts_need;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_register_staff;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox_identity_staff;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_maintenance_cheif;
         private System.Windows.Forms.CheckBox checkBox_emergency;
         private System.Windows.Forms.CheckBox checkBox_waiting;
         private System.Windows.Forms.CheckBox checkBox_completed;
         private System.Windows.Forms.Button button_mini;
         private System.Windows.Forms.Button button_close_dashboard;
         private System.Windows.Forms.Button button_update;
+        private System.Windows.Forms.ComboBox comboBox_aircraft;
+        private System.Windows.Forms.ComboBox comboBox_parts_need;
+        private System.Windows.Forms.ComboBox comboBox_identity_staff;
+        private System.Windows.Forms.ComboBox comboBox_maintenance_cheif;
     }
 }

@@ -5,7 +5,7 @@ using DataAccess.Concrete.Context;
 
 namespace DataAccess.Concrete
 {
-    public class EfUserOperationClaimDal : EfEntityRepositoryBase<UserOperationClaim,HvBSDataBaseContext>,IUserOperationClaimDal
+    public class EfUserOperationClaimDal : EfEntityRepositoryBase<UserOperationClaim,HvBsDataBaseContext>,IUserOperationClaimDal
     {
         
     }

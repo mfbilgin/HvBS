@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = Core
-build_property.ProjectDir = D:\Projects\C#\HvBS\Core\
+build_property.ProjectDir = C:\Users\mfbil\Desktop\HVBS\Core\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

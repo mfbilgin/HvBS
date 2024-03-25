@@ -1,4 +1,4 @@
-﻿namespace FormUI.UserControls
+﻿namespace FormUI.UserControls.ViewControls
 {
     partial class EmergencyRecordControl
     {
@@ -147,7 +147,7 @@
             this.label_trouble.AutoSize = true;
             this.label_trouble.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_trouble.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            this.label_trouble.Location = new System.Drawing.Point(302, 18);
+            this.label_trouble.Location = new System.Drawing.Point(282, 18);
             this.label_trouble.Name = "label_trouble";
             this.label_trouble.Size = new System.Drawing.Size(52, 21);
             this.label_trouble.TabIndex = 0;
@@ -168,7 +168,7 @@
             // 
             this.label_aircraft_title.AutoSize = true;
             this.label_aircraft_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_aircraft_title.Location = new System.Drawing.Point(101, 20);
+            this.label_aircraft_title.Location = new System.Drawing.Point(83, 20);
             this.label_aircraft_title.Name = "label_aircraft_title";
             this.label_aircraft_title.Size = new System.Drawing.Size(122, 18);
             this.label_aircraft_title.TabIndex = 2;
@@ -178,7 +178,7 @@
             // 
             this.label_trouble_title.AutoSize = true;
             this.label_trouble_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_trouble_title.Location = new System.Drawing.Point(303, 20);
+            this.label_trouble_title.Location = new System.Drawing.Point(240, 20);
             this.label_trouble_title.Name = "label_trouble_title";
             this.label_trouble_title.Size = new System.Drawing.Size(51, 18);
             this.label_trouble_title.TabIndex = 3;

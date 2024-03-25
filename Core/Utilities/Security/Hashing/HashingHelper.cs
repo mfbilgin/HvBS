@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Text;
 
 namespace Core.Utilities.Security.Hashing
 {
-    public class HashingHelper
+    public abstract class HashingHelper
     {
         //Password'u veri tabanında açıkca tutmamak için SHA512 algoritması ile şifreleyen methodtur.
         public static void CreatePasswordHash(

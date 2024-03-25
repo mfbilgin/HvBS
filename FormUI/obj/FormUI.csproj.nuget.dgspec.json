@@ -1,49 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\C#\\HvBS\\FormUI\\FormUI.csproj": {}
+    "C:\\Users\\mfbil\\Desktop\\HVBS\\FormUI\\FormUI.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\C#\\HvBS\\Business\\Business.csproj": {
+    "C:\\Users\\mfbil\\Desktop\\HVBS\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\HvBS\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\mfbil\\Desktop\\HVBS\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "D:\\Projects\\C#\\HvBS\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\mfbil\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\HvBS\\Business\\obj\\",
+        "outputPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Business\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj": {
-                "projectPath": "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj"
+              "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj"
               },
-              "D:\\Projects\\C#\\HvBS\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\Projects\\C#\\HvBS\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\mfbil\\Desktop\\HVBS\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\DataAccess\\DataAccess.csproj"
               },
-              "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj"
+              "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj"
               }
             }
           }
@@ -108,36 +98,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj": {
+    "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\mfbil\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\HvBS\\Core\\obj\\",
+        "outputPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -222,47 +202,37 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\C#\\HvBS\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\mfbil\\Desktop\\HVBS\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\HvBS\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\mfbil\\Desktop\\HVBS\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\Projects\\C#\\HvBS\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\mfbil\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\HvBS\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj": {
-                "projectPath": "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj"
+              "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj"
               },
-              "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj"
+              "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj"
               }
             }
           }
@@ -307,44 +277,34 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj": {
+    "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\mfbil\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\HvBS\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj": {
-                "projectPath": "D:\\Projects\\C#\\HvBS\\Core\\Core.csproj"
+              "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Core\\Core.csproj"
               }
             }
           }
@@ -385,44 +345,34 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\C#\\HvBS\\FormUI\\FormUI.csproj": {
+    "C:\\Users\\mfbil\\Desktop\\HVBS\\FormUI\\FormUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\C#\\HvBS\\FormUI\\FormUI.csproj",
+        "projectUniqueName": "C:\\Users\\mfbil\\Desktop\\HVBS\\FormUI\\FormUI.csproj",
         "projectName": "FormUI",
-        "projectPath": "D:\\Projects\\C#\\HvBS\\FormUI\\FormUI.csproj",
+        "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\FormUI\\FormUI.csproj",
         "packagesPath": "C:\\Users\\mfbil\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\C#\\HvBS\\FormUI\\obj\\",
+        "outputPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\FormUI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\mfbil\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\C#\\HvBS\\Business\\Business.csproj": {
-                "projectPath": "D:\\Projects\\C#\\HvBS\\Business\\Business.csproj"
+              "C:\\Users\\mfbil\\Desktop\\HVBS\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Business\\Business.csproj"
               }
             }
           }
@@ -453,6 +403,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -461,7 +429,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

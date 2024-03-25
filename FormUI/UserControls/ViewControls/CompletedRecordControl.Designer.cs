@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label_register_staff_title = new System.Windows.Forms.Label();
             this.label_parts_need_title = new System.Windows.Forms.Label();
-            this.label_estimated_date_title = new System.Windows.Forms.Label();
+            this.label_completed_date_title = new System.Windows.Forms.Label();
             this.label_register_date_title = new System.Windows.Forms.Label();
             this.label_trouble_title = new System.Windows.Forms.Label();
             this.label_aircraft_title = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.label_aircraft_number = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label_estimated_date = new System.Windows.Forms.Label();
+            this.label_completed_date = new System.Windows.Forms.Label();
             this.label_identify_staff = new System.Windows.Forms.Label();
             this.label_register_staff = new System.Windows.Forms.Label();
             this.label_parts_need = new System.Windows.Forms.Label();
@@ -73,15 +73,15 @@
             this.label_parts_need_title.TabIndex = 26;
             this.label_parts_need_title.Text = "Parça İhtiyacı";
             // 
-            // label_estimated_date_title
+            // label_completed_date_title
             // 
-            this.label_estimated_date_title.AutoSize = true;
-            this.label_estimated_date_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_estimated_date_title.Location = new System.Drawing.Point(546, 20);
-            this.label_estimated_date_title.Name = "label_estimated_date_title";
-            this.label_estimated_date_title.Size = new System.Drawing.Size(176, 18);
-            this.label_estimated_date_title.TabIndex = 27;
-            this.label_estimated_date_title.Text = "Tahmini Çıkış Tarihi";
+            this.label_completed_date_title.AutoSize = true;
+            this.label_completed_date_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_completed_date_title.Location = new System.Drawing.Point(546, 20);
+            this.label_completed_date_title.Name = "label_completed_date_title";
+            this.label_completed_date_title.Size = new System.Drawing.Size(168, 18);
+            this.label_completed_date_title.TabIndex = 27;
+            this.label_completed_date_title.Text = "Tamamlanma Tarihi";
             // 
             // label_register_date_title
             // 
@@ -97,7 +97,7 @@
             // 
             this.label_trouble_title.AutoSize = true;
             this.label_trouble_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_trouble_title.Location = new System.Drawing.Point(218, 20);
+            this.label_trouble_title.Location = new System.Drawing.Point(159, 20);
             this.label_trouble_title.Name = "label_trouble_title";
             this.label_trouble_title.Size = new System.Drawing.Size(51, 18);
             this.label_trouble_title.TabIndex = 22;
@@ -107,7 +107,7 @@
             // 
             this.label_aircraft_title.AutoSize = true;
             this.label_aircraft_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_aircraft_title.Location = new System.Drawing.Point(47, 20);
+            this.label_aircraft_title.Location = new System.Drawing.Point(29, 20);
             this.label_aircraft_title.Name = "label_aircraft_title";
             this.label_aircraft_title.Size = new System.Drawing.Size(122, 18);
             this.label_aircraft_title.TabIndex = 21;
@@ -148,7 +148,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label_estimated_date);
+            this.groupBox1.Controls.Add(this.label_completed_date);
             this.groupBox1.Controls.Add(this.label_maintenance_cheif);
             this.groupBox1.Controls.Add(this.label_identify_staff);
             this.groupBox1.Controls.Add(this.label_register_staff);
@@ -172,16 +172,16 @@
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // label_estimated_date
+            // label_completed_date
             // 
-            this.label_estimated_date.AutoSize = true;
-            this.label_estimated_date.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_estimated_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            this.label_estimated_date.Location = new System.Drawing.Point(565, 24);
-            this.label_estimated_date.Name = "label_estimated_date";
-            this.label_estimated_date.Size = new System.Drawing.Size(118, 21);
-            this.label_estimated_date.TabIndex = 0;
-            this.label_estimated_date.Text = "Belirtilmemiş";
+            this.label_completed_date.AutoSize = true;
+            this.label_completed_date.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_completed_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
+            this.label_completed_date.Location = new System.Drawing.Point(565, 24);
+            this.label_completed_date.Name = "label_completed_date";
+            this.label_completed_date.Size = new System.Drawing.Size(118, 21);
+            this.label_completed_date.TabIndex = 0;
+            this.label_completed_date.Text = "Belirtilmemiş";
             // 
             // label_identify_staff
             // 
@@ -268,7 +268,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label_register_staff_title);
             this.Controls.Add(this.label_parts_need_title);
-            this.Controls.Add(this.label_estimated_date_title);
+            this.Controls.Add(this.label_completed_date_title);
             this.Controls.Add(this.label_register_date_title);
             this.Controls.Add(this.label_trouble_title);
             this.Controls.Add(this.label_aircraft_title);
@@ -290,7 +290,7 @@
 
         private System.Windows.Forms.Label label_register_staff_title;
         private System.Windows.Forms.Label label_parts_need_title;
-        private System.Windows.Forms.Label label_estimated_date_title;
+        private System.Windows.Forms.Label label_completed_date_title;
         private System.Windows.Forms.Label label_register_date_title;
         private System.Windows.Forms.Label label_trouble_title;
         private System.Windows.Forms.Label label_aircraft_title;
@@ -299,7 +299,7 @@
         private System.Windows.Forms.Label label_aircraft_number;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label_estimated_date;
+        private System.Windows.Forms.Label label_completed_date;
         private System.Windows.Forms.Label label_identify_staff;
         private System.Windows.Forms.Label label_register_staff;
         private System.Windows.Forms.Label label_parts_need;

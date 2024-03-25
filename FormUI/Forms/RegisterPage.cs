@@ -1,12 +1,7 @@
 ﻿using Business.Abstract;
 using Entities.DTOs;
-using Microsoft.VisualBasic;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FormUI.Forms
@@ -34,12 +29,12 @@ namespace FormUI.Forms
             var result = _authService.Register(user);
             if (result.Success)
             {
-                MessageBox.Show(result.Message, "Başarılı");
+                MessageBox.Show(result.Message, @"Başarılı");
                 Close();
             }
             else
             {
-                MessageBox.Show(result.Message, "Hata");
+                MessageBox.Show(result.Message, @"Hata");
             }
         }
 
@@ -136,7 +131,7 @@ namespace FormUI.Forms
         {
             if (textBox_phone_number.Text.Length == 4 || textBox_phone_number.Text.Length == 8)
             {
-                textBox_phone_number.Text += " ";
+                textBox_phone_number.Text += @" ";
                 textBox_phone_number.SelectionStart = textBox_phone_number.Text.Length;
                 textBox_phone_number.SelectionLength = 0;
             }

@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = DataAccess
-build_property.ProjectDir = D:\Projects\C#\HvBS\DataAccess\
+build_property.ProjectDir = C:\Users\mfbil\Desktop\HVBS\DataAccess\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

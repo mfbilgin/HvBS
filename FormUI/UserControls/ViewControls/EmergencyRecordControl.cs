@@ -1,43 +1,41 @@
-﻿using Business.Abstract;
-using Core.Entities.Concrete;
-using Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using Business.Abstract;
+using Entities.Concrete;
 
-namespace FormUI.UserControls
+namespace FormUI.UserControls.ViewControls
 {
     public partial class EmergencyRecordControl : UserControl
     {
-        private IRecordService _recordService;
-        public EmergencyRecordControl(IRecordService recordService)
+        private readonly IRecordService _recordService;
+        private readonly Base _base;
+        public EmergencyRecordControl(IRecordService recordService,Base @base)
         {
             InitializeComponent();
             _recordService = recordService;
+            _base = @base;  
         }
 
         private void EmergencyRecordControl_Load(object sender, EventArgs e)
         {
+            timer1.Stop();
             timer1.Start();
-            List<Record> records = _recordService.GetAllEmergencyRecord().Data;
+            var records = _recordService.GetAllEmergencyRecord(_base.BaseId).Data;
             if (records.Count > 0)
             {
 
 
                 flowLayoutPanel.Controls.Clear();
-                foreach (Record record in records)
+                foreach (var record in records)
                 {
-                    GroupBox groupBox = new GroupBox()
+                    var groupBox = new GroupBox()
                     {
                         Text = "",
                         Width = 1604,
                         Height = 60,
                     };
-                    Button button = new Button()
+                    var button = new Button()
                     {
                         BackColor = Color.Red,
                         FlatStyle = FlatStyle.Flat,
@@ -46,118 +44,113 @@ namespace FormUI.UserControls
                         Height = 21,
                         Text = ""
                     };
-                    Label label_aircraft_number = new Label()
+                    var labelAircraftNumber = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_trouble = new Label()
+                    var labelTrouble = new TextBox()
+                    {
+                        Multiline = true,
+                        BorderStyle = BorderStyle.None,
+                        ReadOnly = true,
+                        Size = new Size(181,21),
+                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                        BackColor = Color.Snow,
+                        ForeColor = Color.FromArgb(152, 152, 152),
+                    };
+                    var labelRegisterDate = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_register_date = new Label()
+                    var labelEstimatedDate = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_estimated_date = new Label()
+                    var labelPartsNeed = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_parts_need = new Label()
+                    var labelRegisterStaff = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_register_staff = new Label()
-                    {
-                        AutoSize = true,
-                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
-                        ForeColor = Color.FromArgb(152, 152, 152),
-                    };
-                    Label label_identify_staff = new Label()
+                    var labelIdentifyStaff = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
 
-                    label_aircraft_number.Text = record.AircraftSerialNumber;
-                    SetLocation(label_aircraft_number, label_aircraft_title, groupBox);
+                    labelAircraftNumber.Text = record.AircraftSerialNumber;
+                    SetLocation(labelAircraftNumber, label_aircraft_title, groupBox);
 
-                    label_trouble.Text = record.Trouble;
-                    SetLocation(label_trouble, label_trouble_title, groupBox);
+                    labelTrouble.Text = record.Trouble;
+                    SetLocation(labelTrouble, label_trouble_title, groupBox);
 
-                    label_register_date.Text = record.RegisterDate.ToString("dd.MM.yy");
-                    SetLocation(label_register_date, label_register_date_title, groupBox);
+                    labelRegisterDate.Text = record.RegisterDate.ToString("dd.MM.yy");
+                    SetLocation(labelRegisterDate, label_register_date_title, groupBox);
 
-                    label_estimated_date.Text = record.EstimatedEndDate == DateTime.MinValue ? "Belirtilmemiş" : record.EstimatedEndDate.ToString("dd.MM.yy");
-                    SetLocation(label_estimated_date, label_estimated_date_title, groupBox);
+                    labelEstimatedDate.Text = record.EstimatedEndDate == DateTime.MinValue ? "Belirtilmemiş" : record.EstimatedEndDate.ToString("dd.MM.yy");
+                    SetLocation(labelEstimatedDate, label_estimated_date_title, groupBox);
 
-                    label_parts_need.Text = record.PartsNeed != null ? record.PartsNeed : "YOK";
-                    SetLocation(label_parts_need, label_parts_need_title, groupBox);
-                    label_register_staff.Text = record.StaffOfRecording;
-                    SetLocation(label_register_staff, label_register_staff_title, groupBox);
-                    label_identify_staff.Text = record.StaffOfIdentifyTrouble != null ? record.StaffOfIdentifyTrouble : "Belirtilmemiş";
-                    SetLocation(label_identify_staff, label_identify_staff_title, groupBox);
+                    labelPartsNeed.Text = record.PartsNeed ?? "YOK";
+                    SetLocation(labelPartsNeed, label_parts_need_title, groupBox);
+                    labelRegisterStaff.Text = record.StaffOfRecording;
+                    SetLocation(labelRegisterStaff, label_register_staff_title, groupBox);
+                    labelIdentifyStaff.Text = record.StaffOfIdentifyTrouble ?? "Belirtilmemiş";
+                    SetLocation(labelIdentifyStaff, label_identify_staff_title, groupBox);
 
 
 
                     flowLayoutPanel.Controls.Add(groupBox);
                     groupBox.Controls.Add(button);
-                    groupBox.Controls.Add(label_aircraft_number);
-                    groupBox.Controls.Add(label_trouble);
-                    groupBox.Controls.Add(label_register_date);
-                    groupBox.Controls.Add(label_estimated_date);
-                    groupBox.Controls.Add(label_parts_need);
-                    groupBox.Controls.Add(label_register_staff);
-                    groupBox.Controls.Add(label_identify_staff);
+                    groupBox.Controls.Add(labelAircraftNumber);
+                    groupBox.Controls.Add(labelTrouble);
+                    groupBox.Controls.Add(labelRegisterDate);
+                    groupBox.Controls.Add(labelEstimatedDate);
+                    groupBox.Controls.Add(labelPartsNeed);
+                    groupBox.Controls.Add(labelRegisterStaff);
+                    groupBox.Controls.Add(labelIdentifyStaff);
                 }
             }
             else
             {
                 flowLayoutPanel.Visible = false;
-                GroupBox groupBox = new GroupBox()
+                var groupBox = new GroupBox()
                 {
                     Text = "",
                     Width = 1604,
                     Height = 897,
                 };
-                Label label_not_found = new Label()
+                var labelNotFound = new Label()
                 {
-                    Text = "Herhangi Bir Kayıt Bulunamadı",
+                    Text = @"Herhangi Bir Kayıt Bulunamadı",
                     AutoSize = true,
                     Font = new Font(FontFamily.GenericSansSerif, 40.0F),
                     ForeColor = Color.FromArgb(152, 152, 152),
                     Location = new Point(339, 407)
                 };
                 Controls.Add(groupBox);
-                groupBox.Controls.Add(label_not_found);
+                groupBox.Controls.Add(labelNotFound);
             }
         }
-        private void SetLocation(Label content, Label title, GroupBox container)
+        private static void SetLocation(Control content, Control title, Control container)
         {
-            if (title.Size.Width > content.Size.Width)
-            {
-                content.Location = new Point(title.Location.X + (title.Width - content.Width) / 2, container.Height / 2);
-
-            }
-            else
-            {
-                content.Location = new Point(title.Location.X - (content.Width - title.Width) / 2, container.Height / 2);
-            }
+            content.Location = new Point(title.Location.X, container.Height / 2);
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
-            EmergencyRecordControl_Load(new object(), new EventArgs());
+            EmergencyRecordControl_Load(sender, e);
         }
     }
 }

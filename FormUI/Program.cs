@@ -28,7 +28,8 @@ namespace FormUI
             Application.Run(ServiceProvider.GetRequiredService<LoginPage>());
 
         }
-        public static IServiceProvider ServiceProvider { get; private set; }
+
+        private static IServiceProvider ServiceProvider { get; set; }
         static IHostBuilder CreateHostBuilder()
         {
             return Host.CreateDefaultBuilder()
@@ -49,8 +50,17 @@ namespace FormUI
                     services.AddTransient<IRecordService, RecordManager>();
                     services.AddTransient<IRecordDal, EfRecordDal>();
 
-                    services.AddTransient<IPartStatusService, PartStatusManager>();
+                    services.AddTransient<IPartService, PartManager>();
                     services.AddTransient<IPartStatusDal, EfPartStatusDal>();
+                    
+                    services.AddTransient<IMaintenanceTypeService, MaintenanceTypeManager>();
+                    services.AddTransient<IMaintenanceTypeDal, EfMaintenanceTypeDal>();
+                    
+                    services.AddTransient<IBaseService, BaseManager>();
+                    services.AddTransient<IBaseDal, EfBaseDal>();
+
+                    services.AddTransient<IPlaneService, PlaneManager>();
+                    services.AddTransient<IPlaneDal, EfPlaneDal>();
                 });
         }
     }

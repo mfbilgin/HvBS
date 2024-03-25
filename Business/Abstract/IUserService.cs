@@ -1,4 +1,4 @@
-﻿using Core.Entities.Concrete;
+﻿    using Core.Entities.Concrete;
 using Core.Utilities.Results;
 using System.Collections.Generic;
 
@@ -9,7 +9,8 @@ namespace Business.Abstract
         IResult Add(User user);
         IResult Update(User user);
         IDataResult<List<User>> GetAll();
-        IDataResult<User> GetByHvBSNumber(string hvbsNumber);
+        IDataResult<User> GetByHvBsNumber(string hvbsNumber);
         IDataResult<User> GetByUserId(int userId);
+        IList<string> GetAllUserName();
     }
 }

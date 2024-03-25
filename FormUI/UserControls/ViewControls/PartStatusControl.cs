@@ -1,109 +1,161 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using FormUI.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FormUI.UserControls.ViewControls
 {
     public partial class PartStatusControl : UserControl
     {
-        private readonly IPartStatusService _partStatusService;
-        public PartStatusControl(IPartStatusService partStatusService)
+        private readonly IPartService _partService;
+        private readonly Base _base;
+        private readonly int _claimId;
+
+        public PartStatusControl(IPartService partStatusService, int claimId, Base @base)
         {
             InitializeComponent();
-            _partStatusService = partStatusService;
+            _partService = partStatusService;
+            _claimId = claimId;
+            _base = @base;
         }
 
         private void PartStatusControl_Load(object sender, EventArgs e)
         {
-            List<PartStatus> partStatuses = _partStatusService.GetAll().Data;
+            var partStatuses = _partService.GetAll(_base.BaseId).Data;
             if (partStatuses.Count > 0)
             {
-
-
                 flowLayoutPanel.Controls.Clear();
-                foreach (PartStatus partStatus in partStatuses)
+                foreach (var partStatus in partStatuses)
                 {
-                    GroupBox groupBox = new GroupBox()
+                    var index = partStatuses.IndexOf(partStatus);
+                    var groupBox = new GroupBox()
                     {
+                        Name = $@"groupBox_{index}",
                         Text = "",
                         Width = 1604,
                         Height = 60,
                     };
-                    Label label_waiting_aircraft_number = new Label()
+                    var buttonDelete = new Button()
+                    {
+                        Image = Resources.icons8_Delete_Key_32,
+                        Height = 38,
+                        Width = 38,
+                        Location = new Point(1559, groupBox.Size.Height / 2 - 15),
+                        Text = $@"{index}",
+                        ForeColor = Color.Snow,
+                        Font = new Font(FontFamily.GenericSansSerif, 1.0F)
+                    };
+                    var buttonChangeStatus = new Button()
+                    {
+                        Image = partStatus.StockStatus? Resources.icons8_close_32 : Resources.icons8_done_32,
+                        Height = 38,
+                        Width = 38,
+                        Location = new Point(1519, groupBox.Size.Height / 2 - 15),
+                        Text = $@"{index}",
+                        ForeColor = Color.Snow,
+                        Font = new Font(FontFamily.GenericSansSerif, 1.0F)
+                    };
+                    var labelWaitingAircraftNumber = new Label()
+                    {
+                        Name = $@"label_waiting_aircraft_number_{index}",
+                        AutoSize = true,
+                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                        ForeColor = Color.FromArgb(152, 152, 152),
+                    };
+                    var labelPartNumber = new Label()
+                    {
+                        Name = $@"label_part_number_{index}",
+                        AutoSize = true,
+                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                        ForeColor = Color.FromArgb(152, 152, 152),
+                    };
+                    var labelStockStatus = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_part_number = new Label()
-                    {
-                        AutoSize = true,
-                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
-                        ForeColor = Color.FromArgb(152, 152, 152),
-                    };
-                    Label label_stock_status = new Label()
-                    {
-                        AutoSize = true,
-                        Font = new Font(FontFamily.GenericSansSerif, 10.0F),
-                        ForeColor = Color.FromArgb(152, 152, 152),
-                    };
 
+                    buttonDelete.Click += ButtonDeleteClick;
+                    
+                    buttonChangeStatus.Click += ButtonChangeStatusClick; 
+                    toolTip1.SetToolTip(buttonChangeStatus, "Stok Durumunu Değiştir.");
 
+                    labelWaitingAircraftNumber.Text = partStatus.PartName;
+                    SetLocation(labelWaitingAircraftNumber, label_waiting_aircraft_title, groupBox);
 
-                    label_waiting_aircraft.Text = partStatus.WaitingAircraftNumber;
-                    SetLocation(label_waiting_aircraft, label_waiting_aircraft_title, groupBox);
+                    labelPartNumber.Text = partStatus.PartNumber;
+                    SetLocation(labelPartNumber, label_part_number_title, groupBox);
 
-                    label_part_number.Text = partStatus.PartNumber;
-                    SetLocation(label_part_number, label_part_number_title, groupBox);
-
-                    label_stock_status.Text = partStatus.StockStatus ? "VAR" : "YOK";
-                    SetLocation(label_stock_status, label_stock_status_title, groupBox);
+                    labelStockStatus.Text = partStatus.StockStatus ? "VAR" : "YOK";
+                    SetLocation(labelStockStatus, label_stock_status_title, groupBox);
 
                     flowLayoutPanel.Controls.Add(groupBox);
-                    groupBox.Controls.Add(label_waiting_aircraft);
-                    groupBox.Controls.Add(label_part_number);
-                    groupBox.Controls.Add(label_stock_status);
+                    groupBox.Controls.Add(labelWaitingAircraftNumber);
+                    groupBox.Controls.Add(labelPartNumber);
+                    groupBox.Controls.Add(labelStockStatus);
+                    groupBox.Controls.Add(buttonDelete);
+                    groupBox.Controls.Add(buttonChangeStatus);
                 }
             }
             else
             {
                 flowLayoutPanel.Visible = false;
-                GroupBox groupBox = new GroupBox()
+                var groupBox = new GroupBox()
                 {
                     Text = "",
                     Width = 1604,
                     Height = 897,
                 };
-                Label label_not_found = new Label()
+                var labelNotFound = new Label()
                 {
-                    Text = "Herhangi Bir Kayıt Bulunamadı",
+                    Text = @"Herhangi Bir Kayıt Bulunamadı",
                     AutoSize = true,
                     Font = new Font(FontFamily.GenericSansSerif, 40.0F),
                     ForeColor = Color.FromArgb(152, 152, 152),
                     Location = new Point(339, 407)
                 };
                 Controls.Add(groupBox);
-                groupBox.Controls.Add(label_not_found);
+                groupBox.Controls.Add(labelNotFound);
             }
-
         }
-        private void SetLocation(Label content, Label title, GroupBox container)
-        {
-            if (title.Size.Width > content.Size.Width)
-            {
-                content.Location = new Point(title.Location.X + (title.Width - content.Width) / 2, container.Height / 2);
 
-            }
-            else
-            {
-                content.Location = new Point(title.Location.X - (content.Width - title.Width) / 2, container.Height / 2);
-            }
+        private static void SetLocation(Control content, Control title, Control container)
+        {
+            content.Location = new Point(title.Location.X, container.Height / 2);
+        }
+
+        private void ButtonDeleteClick(object sender, EventArgs e)
+        {
+            var index = sender.ToString()?.ToCharArray()[sender.ToString()!.Length - 1].ToString();
+            var waitingAircraftNumber = Controls["flowLayoutPanel"].Controls[$"groupBox_{index}"]
+                .Controls[$"label_waiting_aircraft_number_{index}"].Text;
+            var partNumber = Controls["flowLayoutPanel"].Controls[$"groupBox_{index}"]
+                .Controls[$"label_part_number_{index}"].Text;
+            var message = $@"{partNumber} No'lu Parçaya Ait Durum Kaydını Silmek İstediğinizden Emin Misiniz?";
+            const MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            var dialogResult = MessageBox.Show(message, "", buttons);
+            if (dialogResult != DialogResult.Yes) return;
+            var part = _partService.GetByPartNumberAndWaitingAircraftNumber(partNumber, waitingAircraftNumber).Data;
+            var result = _partService.Delete(part, _claimId);
+            MessageBox.Show(result.Message);
+            PartStatusControl_Load(sender,e);
+        }
+
+        private void ButtonChangeStatusClick(object sender, EventArgs e)
+        {
+            var index = sender.ToString()?.ToCharArray()[sender.ToString()!.Length - 1].ToString();
+            var waitingAircraftNumber = Controls["flowLayoutPanel"].Controls[$"groupBox_{index}"]
+                .Controls[$"label_waiting_aircraft_number_{index}"].Text;
+            var partNumber = Controls["flowLayoutPanel"].Controls[$"groupBox_{index}"]
+                .Controls[$"label_part_number_{index}"].Text;
+            var part = _partService.GetByPartNumberAndWaitingAircraftNumber(partNumber, waitingAircraftNumber).Data;
+            part.StockStatus = !part.StockStatus;
+            var result = _partService.Update(part, _claimId);
+            MessageBox.Show(result.Message);
+            PartStatusControl_Load(sender,e);
         }
     }
 }

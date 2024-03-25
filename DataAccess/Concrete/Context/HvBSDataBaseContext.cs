@@ -6,12 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete.Context
 {
-    public class HvBSDataBaseContext : DbContext
+    public class HvBsDataBaseContext : DbContext
     {
-        private readonly string _filePath = @"C:\HvBS\connectionString.txt";
+        private const string FilePath = @"C:\HvBS\connectionString.txt";
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            FileStream fileStream = new FileStream(_filePath, FileMode.Open,FileAccess.Read);
+            FileStream fileStream = new FileStream(FilePath, FileMode.Open,FileAccess.Read);
             StreamReader streamReader = new StreamReader(fileStream);
             string connectionString = streamReader.ReadLine();
             if (connectionString == null)
@@ -24,7 +25,10 @@ namespace DataAccess.Concrete.Context
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
         public DbSet<Record> Records { get; set; }
-        public DbSet<PartStatus> PartStatuses { get; set; }
+        public DbSet<Part> Parts { get; set; }
         public DbSet<MaintenanceType> MaintenanceTypes { get; set; }
+        public DbSet<Base> Bases { get; set; }
+        public DbSet<Plane> Planes { get; set; }
+
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b5obvJ9NHPvrCeXzItb1OpDDRDl5i67ElUbk04ND5mlV493lxcdHGuK1wpLWYG2tY/nLJg8Rt/0G8LFXOZmJZg==",
+  "dgSpecHash": "BUGd4PaJACRtsVIQN/Db5jbGUgoLqEjM5ZVFXSmPnavWsoRUhFLeg4n5QzL+zT8tP1jOAXfgQ7TdE7O50SCSCw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\C#\\HvBS\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mfbil\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\mfbil\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

@@ -1,11 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FormUI.Forms
@@ -13,39 +8,55 @@ namespace FormUI.Forms
     public partial class RecordUpdateForm : Form
     {
         private readonly IRecordService _recordService;
+        private readonly IPlaneService _planeService;
+        private readonly IUserService _userService;
+        private readonly IPartService _partService;
+        private readonly Base _base;
         private Record _record = new Record();
         private readonly string _aircraftNumber;
         private readonly string _trouble;
-        private readonly int _claimId;
-        public RecordUpdateForm(string aircraftNumber, string trouble, IRecordService recordService, int claimId)
+
+        public RecordUpdateForm(string aircraftNumber, string trouble, IRecordService recordService,
+             Base @base, IUserService userService, IPartService partService, IPlaneService planeService)
         {
             InitializeComponent();
             _aircraftNumber = aircraftNumber;
             _trouble = trouble;
             _recordService = recordService;
-            _claimId = claimId;
+            _base = @base;
+            _userService = userService;
+            _partService = partService;
+            _planeService = planeService;
         }
 
         private void RecordUpdateForm_Load(object sender, EventArgs e)
         {
             _record = _recordService.GetByAircraftNumberAndTrouble(_aircraftNumber, _trouble).Data;
+            SetComboBoxData();
 
-            textBox_aircraft.Text = _record.AircraftSerialNumber;
+            textBox_register_staff.Text = _record.StaffOfRecording;
             textBox_trouble.Text = _record.Trouble;
             textBox_reason_of_waiting.Text = _record.ReasonOfWaiting;
-            textBox_parts_need.Text = _record.PartsNeed;
-            textBox_register_staff.Text = _record.StaffOfRecording;
-            textBox_identity_staff.Text = _record.StaffOfIdentifyTrouble;
-            textBox_maintenance_cheif.Text = _record.MaintenanceChief;
+
+            comboBox_aircraft.Text = _record.AircraftSerialNumber;
+            comboBox_parts_need.Text = _record.PartsNeed;
+            comboBox_identity_staff.Text = _record.StaffOfIdentifyTrouble;
+            comboBox_maintenance_cheif.Text = _record.MaintenanceChief;
+
             checkBox_emergency.Checked = _record.IsEmergency;
             checkBox_completed.Checked = _record.IsCompleted;
             checkBox_waiting.Checked = _record.IsWaiting;
         }
 
-        private void textBox_aircraft_TextChanged(object sender, EventArgs e)
+        private void SetComboBoxData()
         {
-            _record.AircraftSerialNumber = textBox_aircraft.Text;
+            var users = _userService.GetAllUserName();
+            comboBox_aircraft.DataSource = _planeService.GetAllSerialNumber(_base.BaseId).Data;
+            comboBox_parts_need.DataSource = _partService.GetAllPartNames(_base.BaseId);
+            comboBox_identity_staff.DataSource = users;
+            comboBox_maintenance_cheif.DataSource = users;
         }
+
 
         private void textBox_trouble_TextChanged(object sender, EventArgs e)
         {
@@ -57,25 +68,12 @@ namespace FormUI.Forms
             _record.ReasonOfWaiting = textBox_reason_of_waiting.Text;
         }
 
-        private void textBox_parts_need_TextChanged(object sender, EventArgs e)
-        {
-            _record.PartsNeed = textBox_parts_need.Text;
-        }
 
         private void textBox_register_staff_TextChanged(object sender, EventArgs e)
         {
             _record.StaffOfRecording = textBox_register_staff.Text;
         }
 
-        private void textBox_identity_staff_TextChanged(object sender, EventArgs e)
-        {
-            _record.StaffOfIdentifyTrouble = textBox_identity_staff.Text;
-        }
-
-        private void textBox_maintenance_cheif_TextChanged(object sender, EventArgs e)
-        {
-            _record.MaintenanceChief = textBox_maintenance_cheif.Text;
-        }
 
         private void checkBox_emergency_CheckedChanged(object sender, EventArgs e)
         {
@@ -84,17 +82,12 @@ namespace FormUI.Forms
 
         private void checkBox_waiting_CheckedChanged(object sender, EventArgs e)
         {
-            _record.IsWaiting = checkBox_waiting.Checked;
-            checkBox_completed.Checked = checkBox_waiting.Checked ? false : checkBox_completed.Checked;
-            _record.IsCompleted = checkBox_completed.Checked;
+            checkBox_completed.Checked = !checkBox_waiting.Checked && checkBox_completed.Checked;
         }
 
         private void checkBox_completed_CheckedChanged(object sender, EventArgs e)
         {
-            _record.IsCompleted = checkBox_completed.Checked;
-            checkBox_waiting.Checked = checkBox_completed.Checked ? false : checkBox_waiting.Checked;
-            _record.IsWaiting = checkBox_waiting.Checked;
-
+            checkBox_waiting.Checked = !checkBox_completed.Checked && checkBox_waiting.Checked;
         }
 
         private void button_close_dashboard_Click(object sender, EventArgs e)
@@ -109,18 +102,55 @@ namespace FormUI.Forms
 
         private void button_update_Click(object sender, EventArgs e)
         {
-            if ((checkBox_completed.Checked && textBox_maintenance_cheif.Text != string.Empty)|| !checkBox_completed.Checked)
+            if (_record.IsCompleted)
+                MessageBox.Show(@"Tamamlanmış kayıtlar güncellenemez!");
+
+            else if (checkBox_completed.Checked && _record.IsWaiting)
+                MessageBox.Show(@"Kayıt bakıma alınmadan tamamlanamaz!");
+
+            else if (!checkBox_waiting.Checked && comboBox_maintenance_cheif.Text == string.Empty)
+                MessageBox.Show(@"Lütfen bakım şefini giriniz!");
+
+            else
             {
-                var result = _recordService.Update(_record, _claimId);
+                _record.IsWaiting = checkBox_waiting.Checked;
+                _record.IsCompleted = checkBox_completed.Checked;
+                _record.AircraftSerialNumber = comboBox_aircraft.Text;
+                _record.PartsNeed = comboBox_parts_need.Text;
+                _record.StaffOfIdentifyTrouble = comboBox_identity_staff.Text;
+                _record.MaintenanceChief = comboBox_maintenance_cheif.Text;
+                
+                if (!_record.IsWaiting && !_record.IsCompleted)
+                    _record.RegisterDate = DateTime.Now;
+                if (_record.IsCompleted)
+                {
+                    _record.CompleteDate = DateTime.Now;
+                }
+
+                var result = _recordService.Update(_record);
                 MessageBox.Show(result.Message);
                 Close();
             }
-            else
-            {
-                MessageBox.Show("Lütfen bakım şefini giriniz!");
-            }
-
         }
 
+        // private void comboBox_aircraft_SelectedIndexChanged(object sender, EventArgs e)
+        // {
+        //     _record.AircraftSerialNumber = comboBox_aircraft.SelectedValue.ToString();
+        // }
+        //
+        // private void comboBox_parts_need_SelectedIndexChanged(object sender, EventArgs e)
+        // {
+        //     _record.PartsNeed = comboBox_parts_need.SelectedValue.ToString();
+        // }
+        //
+        // private void comboBox_identity_staff_SelectedIndexChanged(object sender, EventArgs e)
+        // {
+        //     _record.StaffOfIdentifyTrouble = comboBox_identity_staff.SelectedValue.ToString();
+        // }
+        //
+        // private void comboBox_maintenance_cheif_SelectedIndexChanged(object sender, EventArgs e)
+        // {
+        //     _record.MaintenanceChief = comboBox_maintenance_cheif.SelectedValue.ToString();
+        // }
     }
 }

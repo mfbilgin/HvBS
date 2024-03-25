@@ -41,6 +41,8 @@
             this.button_minimize = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.button_show_password = new System.Windows.Forms.Button();
+            this.label_warning = new System.Windows.Forms.Label();
+            this.label_warning_2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.basic_picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -217,12 +219,38 @@
             this.button_show_password.UseVisualStyleBackColor = false;
             this.button_show_password.Click += new System.EventHandler(this.button_show_password_Click);
             // 
+            // label_warning
+            // 
+            this.label_warning.AutoSize = true;
+            this.label_warning.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_warning.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label_warning.Location = new System.Drawing.Point(291, 689);
+            this.label_warning.Name = "label_warning";
+            this.label_warning.Size = new System.Drawing.Size(362, 16);
+            this.label_warning.TabIndex = 10;
+            this.label_warning.Text = "Uyarı : İlk oluşturulan hesabın rolü yönetici olacaktır";
+            this.label_warning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_warning_2
+            // 
+            this.label_warning_2.AutoSize = true;
+            this.label_warning_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_warning_2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label_warning_2.Location = new System.Drawing.Point(305, 707);
+            this.label_warning_2.Name = "label_warning_2";
+            this.label_warning_2.Size = new System.Drawing.Size(335, 16);
+            this.label_warning_2.TabIndex = 10;
+            this.label_warning_2.Text = "Ardından oluşan hesaplar ise görevli rolündedir";
+            this.label_warning_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // RegisterPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 763);
+            this.Controls.Add(this.label_warning_2);
+            this.Controls.Add(this.label_warning);
             this.Controls.Add(this.button_show_password);
             this.Controls.Add(this.button_minimize);
             this.Controls.Add(this.button_close);
@@ -262,5 +290,7 @@
         private System.Windows.Forms.Button button_minimize;
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Button button_show_password;
+        private System.Windows.Forms.Label label_warning;
+        private System.Windows.Forms.Label label_warning_2;
     }
 }

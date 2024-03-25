@@ -8,7 +8,7 @@ using DataAccess.Concrete.Context;
 
 namespace DataAccess.Concrete
 {
-    public class EfOperationClaimDal : EfEntityRepositoryBase<OperationClaim,HvBSDataBaseContext>,IOperationClaimDal
+    public class EfOperationClaimDal : EfEntityRepositoryBase<OperationClaim,HvBsDataBaseContext>,IOperationClaimDal
     {
     }
 }

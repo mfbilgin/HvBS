@@ -1,46 +1,42 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
-using FormUI.Forms;
 using FormUI.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-
 namespace FormUI.UserControls.ProccessControl
 {
     public partial class RecordDeleteControl : UserControl
     {
         private readonly IRecordService _recordService;
-        private readonly int _claimId;
-        public RecordDeleteControl(IRecordService recordService, int claimId)
+        private readonly Base _base;
+
+        public RecordDeleteControl(IRecordService recordService, Base @base)
         {
             InitializeComponent();
             _recordService = recordService;
-            _claimId = claimId;
+            _base = @base;
         }
 
         private void RecordDeleteControl_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            List<Record> records = _recordService.GetAll().Data;
+            List<Record> records = _recordService.GetAll(_base.BaseId).Data;
             if (records.Count > 0)
             {
                 flowLayoutPanel.Controls.Clear();
-                foreach (Record record in records)
+                foreach (var record in records)
                 {
-                    int index = records.IndexOf(record);
-                    GroupBox groupBox = new GroupBox()
+                    var index = records.IndexOf(record);
+                    var groupBox = new GroupBox()
                     {
                         Name = $"groupBox_{index}",
                         Text = "",
                         Width = 1604,
                         Height = 60,
                     };
-                    Button button = new Button()
+                    var button = new Button()
                     {
                         Name = $"button_emergency_{index}",
                         BackColor = record.IsEmergency ? Color.Red : Color.Snow,
@@ -51,149 +47,142 @@ namespace FormUI.UserControls.ProccessControl
                         Enabled = false,
                         Text = ""
                     };
-                    Button button_delete = new Button()
+                    var buttonDelete = new Button()
                     {
                         Image = Resources.icons8_Delete_Key_32,
                         Height = 38,
                         Width = 38,
-                        Location = new System.Drawing.Point(1559, groupBox.Size.Height / 2 - 15),
-                        Text = $"{index}",
+                        Location = new Point(1559, groupBox.Size.Height / 2 - 15),
+                        Text = $@"{index}",
                         ForeColor = Color.Snow,
                         Font = new Font(FontFamily.GenericSansSerif, 1.0F)
 
                     };
-                    Label label_aircraft_number = new Label()
+                    var labelAircraftNumber = new Label()
                     {
                         Name = $"label_aircraft_number_{index}",
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_trouble = new Label()
+                    var labelTrouble = new TextBox()
                     {
                         Name = $"label_trouble_{index}",
-                        AutoSize = true,
+                        Multiline = true,
+                        BorderStyle = BorderStyle.None,
+                        ReadOnly = true,
+                        Size = new Size(181, 21),
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
+                        BackColor = Color.Snow,
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_register_date = new Label()
+                    var labelRegisterDate = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_estimated_date = new Label()
+                    var labelEstimatedDate = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_parts_need = new Label()
+                    var labelPartsNeed = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_register_staff = new Label()
+                    var labelRegisterStaff = new Label()
                     {
                         Name = $"label_register_staff_{index}",
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152),
                     };
-                    Label label_identify_staff = new Label()
+                    var labelIdentifyStaff = new Label()
                     {
                         AutoSize = true,
                         Font = new Font(FontFamily.GenericSansSerif, 10.0F),
                         ForeColor = Color.FromArgb(152, 152, 152)
                     };
 
-                    label_aircraft_number.Text = record.AircraftSerialNumber;
-                    SetLocation(label_aircraft_number, label_aircraft_title, groupBox);
+                    labelAircraftNumber.Text = record.AircraftSerialNumber;
+                    SetLocation(labelAircraftNumber, label_aircraft_title, groupBox);
 
-                    label_trouble.Text = record.Trouble;
-                    SetLocation(label_trouble, label_trouble_title, groupBox);
+                    labelTrouble.Text = record.Trouble;
+                    SetLocation(labelTrouble, label_trouble_title, groupBox);
 
-                    label_register_date.Text = record.RegisterDate.ToString("dd.MM.yy");
-                    SetLocation(label_register_date, label_register_date_title, groupBox);
+                    labelRegisterDate.Text = record.RegisterDate.ToString("dd.MM.yy");
+                    SetLocation(labelRegisterDate, label_register_date_title, groupBox);
 
-                    label_estimated_date.Text = record.EstimatedEndDate == DateTime.MinValue ? "Belirtilmemiş" : record.EstimatedEndDate.ToString("dd.MM.yy");
-                    SetLocation(label_estimated_date, label_estimated_date_title, groupBox);
+                    labelEstimatedDate.Text = record.EstimatedEndDate == DateTime.MinValue ? "Belirtilmemiş" : record.EstimatedEndDate.ToString("dd.MM.yy");
+                    SetLocation(labelEstimatedDate, label_estimated_date_title, groupBox);
 
-                    label_parts_need.Text = record.PartsNeed != null ? record.PartsNeed : "YOK";
-                    SetLocation(label_parts_need, label_parts_need_title, groupBox);
+                    labelPartsNeed.Text = record.PartsNeed ?? "YOK";
+                    SetLocation(labelPartsNeed, label_parts_need_title, groupBox);
 
-                    label_register_staff.Text = record.StaffOfRecording;
-                    SetLocation(label_register_staff, label_register_staff_title, groupBox);
-                    label_identify_staff.Text = record.StaffOfIdentifyTrouble != null ? record.StaffOfIdentifyTrouble : "Belirtilmemiş";
-                    SetLocation(label_identify_staff, label_identify_staff_title, groupBox);
+                    labelRegisterStaff.Text = record.StaffOfRecording;
+                    SetLocation(labelRegisterStaff, label_register_staff_title, groupBox);
+                    labelIdentifyStaff.Text = record.StaffOfIdentifyTrouble ?? "Belirtilmemiş";
+                    SetLocation(labelIdentifyStaff, label_identify_staff_title, groupBox);
 
-                    button_delete.Click += new EventHandler(button_delete_Click);
+                    buttonDelete.Click += button_delete_Click;
 
 
                     flowLayoutPanel.Controls.Add(groupBox);
                     groupBox.Controls.Add(button);
-                    groupBox.Controls.Add(label_aircraft_number);
-                    groupBox.Controls.Add(label_trouble);
-                    groupBox.Controls.Add(label_register_date);
-                    groupBox.Controls.Add(label_estimated_date);
-                    groupBox.Controls.Add(label_parts_need);
-                    groupBox.Controls.Add(label_register_staff);
-                    groupBox.Controls.Add(label_identify_staff);
-                    groupBox.Controls.Add(button_delete);
+                    groupBox.Controls.Add(labelAircraftNumber);
+                    groupBox.Controls.Add(labelTrouble);
+                    groupBox.Controls.Add(labelRegisterDate);
+                    groupBox.Controls.Add(labelEstimatedDate);
+                    groupBox.Controls.Add(labelPartsNeed);
+                    groupBox.Controls.Add(labelRegisterStaff);
+                    groupBox.Controls.Add(labelIdentifyStaff);
+                    groupBox.Controls.Add(buttonDelete);
                 }
             }
             else
             {
                 flowLayoutPanel.Visible = false;
-                GroupBox groupBox = new GroupBox()
+                var groupBox = new GroupBox()
                 {
                     Text = "",
                     Width = 1604,
                     Height = 897,
                 };
-                Label label_not_found = new Label()
+                var labelNotFound = new Label()
                 {
-                    Text = "Herhangi Bir Kayıt Bulunamadı",
+                    Text = @"Herhangi Bir Kayıt Bulunamadı",
                     AutoSize = true,
                     Font = new Font(FontFamily.GenericSansSerif, 40.0F),
                     ForeColor = Color.FromArgb(152, 152, 152),
                     Location = new Point(339, 407)
                 };
                 Controls.Add(groupBox);
-                groupBox.Controls.Add(label_not_found);
+                groupBox.Controls.Add(labelNotFound);
             }
         }
-        private void SetLocation(Label content, Label title, GroupBox container)
+        private static void SetLocation(Control content, Label title, GroupBox container)
         {
-            if (title.Size.Width > content.Size.Width)
-            {
-                content.Location = new Point(title.Location.X + (title.Size.Width - content.Size.Width) / 2, container.Height / 2 - 12);
-
-            }
-            else
-            {
-                content.Location = new Point(title.Location.X - (content.Size.Width - title.Size.Width) / 2, container.Height / 2 - 12);
-            }
+            content.Location = title.Size.Width > content.Size.Width ? new Point(title.Location.X + (title.Size.Width - content.Size.Width) / 2, container.Height / 2 - 12) : new Point(title.Location.X - (content.Size.Width - title.Size.Width) / 2, container.Height / 2 - 12);
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            string name = sender.ToString().ToCharArray()[sender.ToString().Length - 1].ToString();
-            string aircraftNumber = Controls["flowLayoutPanel"].Controls[$"groupBox_{name}"].Controls[$"label_aircraft_number_{name}"].Text;
-            string trouble = Controls["flowLayoutPanel"].Controls[$"groupBox_{name}"].Controls[$"label_trouble_{name}"].Text;
+            var name = sender.ToString()!.ToCharArray()[sender.ToString()!.Length - 1].ToString();
+            var aircraftNumber = Controls["flowLayoutPanel"].Controls[$"groupBox_{name}"].Controls[$"label_aircraft_number_{name}"].Text;
+            var trouble = Controls["flowLayoutPanel"].Controls[$"groupBox_{name}"].Controls[$"label_trouble_{name}"].Text;
 
-            string message = $@"{aircraftNumber} No'lu Uçağa Ait {trouble} Arızası Kaydını Silmek İstediğinizden Emin Misiniz?";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult dialogResult;
-            dialogResult = MessageBox.Show(message,"", buttons);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Record record = _recordService.GetByAircraftNumberAndTrouble(aircraftNumber,trouble).Data;
-                var result = _recordService.Delete(record,_claimId);
-                MessageBox.Show(result.Message);
-                RecordDeleteControl_Load(new object(),new EventArgs());
-            }
+            var message = $@"{aircraftNumber} No'lu Uçağa Ait {trouble} Arızası Kaydını Silmek İstediğinizden Emin Misiniz?";
+            var buttons = MessageBoxButtons.YesNo;
+            var dialogResult = MessageBox.Show(message,"", buttons);
+            if (dialogResult != DialogResult.Yes) return;
+            var record = _recordService.GetByAircraftNumberAndTrouble(aircraftNumber,trouble).Data;
+            var result = _recordService.Delete(record);
+            MessageBox.Show(result.Message);
+            RecordDeleteControl_Load(sender,e);
         }
     }
 }

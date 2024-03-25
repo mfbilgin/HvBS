@@ -5,7 +5,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Concrete
 {
-    public class EfMaintenanceTypeDal : EfEntityRepositoryBase<MaintenanceType,HvBSDataBaseContext>,IMaintenanceTypeDal
+    public class EfMaintenanceTypeDal : EfEntityRepositoryBase<MaintenanceType,HvBsDataBaseContext>,IMaintenanceTypeDal
     {
         
     }

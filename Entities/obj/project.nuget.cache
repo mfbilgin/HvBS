@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EQNQjzqYbwLbw57Y7xxsSUmgckXY4L/3OXUmfvrSr8PtWZZEwoULh8iSqdlemMLCrgMOHS88oGyHDgwkOO9Pzw==",
+  "dgSpecHash": "ix5ddeI/vJPptLIPxJq/4cfvfje2sifKRw3LRJoT4fEMzLxrtpAV1HPjz1xtZ00w3gIRfd+D5TTkGDPA1nuY3w==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\C#\\HvBS\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\mfbil\\Desktop\\HVBS\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mfbil\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\mfbil\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",

@@ -1,4 +1,4 @@
-﻿namespace FormUI.SettingControls
+﻿namespace FormUI.UserControls.SettingControls
 {
     partial class PasswordChangeControl
     {

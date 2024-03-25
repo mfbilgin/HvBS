@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IPartStatusDal : IEntityRepository<PartStatus>
+    public interface IPartStatusDal : IEntityRepository<Part>
     {
     }
 }

@@ -1,20 +1,15 @@
-﻿using Business.Abstract;
-using Entities.DTOs;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
+﻿using System;
 using System.Windows.Forms;
+using Business.Abstract;
+using Entities.DTOs;
 
-namespace FormUI.SettingControls
+namespace FormUI.UserControls.SettingControls
 {
     public partial class PasswordChangeControl : UserControl
     {
         private readonly IAuthService _authService;
-        private string _hVbsNumber;
-        private UserForPasswordChangeDto _userForPasswordChangeDto = new UserForPasswordChangeDto();
+        private readonly string _hVbsNumber;
+        private readonly UserForPasswordChangeDto _userForPasswordChangeDto = new UserForPasswordChangeDto();
         public PasswordChangeControl(IAuthService authService,string hVbsNumber)
         {
             InitializeComponent();
@@ -31,7 +26,7 @@ namespace FormUI.SettingControls
         {
             if (textBox_new_password.Text != textBox_new_password_confirm.Text)
             {
-                MessageBox.Show("Şifreler Uyuşmuyor");
+                MessageBox.Show(@"Şifreler Uyuşmuyor");
             }
             else
             {

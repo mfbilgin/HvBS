@@ -39,12 +39,15 @@
             this.button_minimize = new System.Windows.Forms.Button();
             this.button_show_password = new System.Windows.Forms.Button();
             this.label_is_register = new System.Windows.Forms.Label();
+            this.comboBox_bases = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.basic_picture)).BeginInit();
             this.SuspendLayout();
             // 
             // basic_picture
             // 
-            this.basic_picture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.basic_picture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.basic_picture.Image = ((System.Drawing.Image)(resources.GetObject("basic_picture.Image")));
             this.basic_picture.Location = new System.Drawing.Point(318, 69);
             this.basic_picture.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -56,7 +59,9 @@
             // 
             // textBox_HvBS
             // 
-            this.textBox_HvBS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox_HvBS.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_HvBS.BackColor = System.Drawing.SystemColors.Control;
             this.textBox_HvBS.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBox_HvBS.Location = new System.Drawing.Point(318, 399);
@@ -71,6 +76,9 @@
             // 
             // textBox_password
             // 
+            this.textBox_password.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_password.BackColor = System.Drawing.SystemColors.Control;
             this.textBox_password.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBox_password.Location = new System.Drawing.Point(318, 455);
@@ -86,9 +94,12 @@
             // 
             // label_password_change
             // 
+            this.label_password_change.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label_password_change.AutoSize = true;
             this.label_password_change.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_password_change.Location = new System.Drawing.Point(428, 506);
+            this.label_password_change.Location = new System.Drawing.Point(415, 569);
             this.label_password_change.Name = "label_password_change";
             this.label_password_change.Size = new System.Drawing.Size(118, 16);
             this.label_password_change.TabIndex = 3;
@@ -98,10 +109,13 @@
             // 
             // button_login
             // 
+            this.button_login.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(87)))), ((int)(((byte)(232)))));
             this.button_login.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_login.ForeColor = System.Drawing.Color.White;
-            this.button_login.Location = new System.Drawing.Point(386, 538);
+            this.button_login.Location = new System.Drawing.Point(381, 601);
             this.button_login.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(187, 64);
@@ -112,9 +126,12 @@
             // 
             // label_title
             // 
+            this.label_title.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label_title.AutoSize = true;
             this.label_title.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_title.Location = new System.Drawing.Point(165, 345);
+            this.label_title.Location = new System.Drawing.Point(155, 345);
             this.label_title.Name = "label_title";
             this.label_title.Size = new System.Drawing.Size(639, 27);
             this.label_title.TabIndex = 4;
@@ -166,10 +183,13 @@
             // 
             // label_is_register
             // 
+            this.label_is_register.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label_is_register.AutoSize = true;
             this.label_is_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label_is_register.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label_is_register.Location = new System.Drawing.Point(379, 606);
+            this.label_is_register.Location = new System.Drawing.Point(372, 669);
             this.label_is_register.Name = "label_is_register";
             this.label_is_register.Size = new System.Drawing.Size(204, 16);
             this.label_is_register.TabIndex = 8;
@@ -177,12 +197,22 @@
             this.label_is_register.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_is_register.Click += new System.EventHandler(this.label_is_register_Click);
             // 
+            // comboBox_bases
+            // 
+            this.comboBox_bases.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox_bases.FormattingEnabled = true;
+            this.comboBox_bases.Location = new System.Drawing.Point(318, 513);
+            this.comboBox_bases.Name = "comboBox_bases";
+            this.comboBox_bases.Size = new System.Drawing.Size(312, 29);
+            this.comboBox_bases.TabIndex = 9;
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(984, 763);
+            this.Controls.Add(this.comboBox_bases);
             this.Controls.Add(this.label_is_register);
             this.Controls.Add(this.button_show_password);
             this.Controls.Add(this.button_minimize);
@@ -194,12 +224,14 @@
             this.Controls.Add(this.textBox_HvBS);
             this.Controls.Add(this.basic_picture);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "LoginPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.basic_picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,6 +251,7 @@
         private System.Windows.Forms.Button button_close;
         private System.Windows.Forms.Button button_minimize;
         private System.Windows.Forms.Label label_is_register;
+        private System.Windows.Forms.ComboBox comboBox_bases;
     }
 }
 

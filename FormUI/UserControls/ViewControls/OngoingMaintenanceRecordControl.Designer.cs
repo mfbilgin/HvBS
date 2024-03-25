@@ -1,4 +1,4 @@
-﻿namespace FormUI.UserControls
+﻿namespace FormUI.UserControls.ViewControls
 {
     partial class OngoingMaintenanceRecordControl
     {
@@ -47,6 +47,7 @@
             this.label_trouble = new System.Windows.Forms.Label();
             this.label_aircraft_number = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.flowLayoutPanel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -55,11 +56,11 @@
             // 
             this.label_identify_staff_title.AutoSize = true;
             this.label_identify_staff_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_identify_staff_title.Location = new System.Drawing.Point(1401, 20);
+            this.label_identify_staff_title.Location = new System.Drawing.Point(1438, 20);
             this.label_identify_staff_title.Name = "label_identify_staff_title";
-            this.label_identify_staff_title.Size = new System.Drawing.Size(168, 18);
+            this.label_identify_staff_title.Size = new System.Drawing.Size(95, 18);
             this.label_identify_staff_title.TabIndex = 7;
-            this.label_identify_staff_title.Text = "Arızayı Tespit Eden";
+            this.label_identify_staff_title.Text = "Bakım Şefi";
             // 
             // label_register_staff_title
             // 
@@ -105,7 +106,7 @@
             // 
             this.label_trouble_title.AutoSize = true;
             this.label_trouble_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_trouble_title.Location = new System.Drawing.Point(303, 20);
+            this.label_trouble_title.Location = new System.Drawing.Point(240, 20);
             this.label_trouble_title.Name = "label_trouble_title";
             this.label_trouble_title.Size = new System.Drawing.Size(51, 18);
             this.label_trouble_title.TabIndex = 6;
@@ -115,7 +116,7 @@
             // 
             this.label_aircraft_title.AutoSize = true;
             this.label_aircraft_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_aircraft_title.Location = new System.Drawing.Point(101, 20);
+            this.label_aircraft_title.Location = new System.Drawing.Point(71, 20);
             this.label_aircraft_title.Name = "label_aircraft_title";
             this.label_aircraft_title.Size = new System.Drawing.Size(122, 18);
             this.label_aircraft_title.TabIndex = 5;
@@ -217,7 +218,7 @@
             this.label_trouble.AutoSize = true;
             this.label_trouble.Font = new System.Drawing.Font("Century", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_trouble.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
-            this.label_trouble.Location = new System.Drawing.Point(302, 18);
+            this.label_trouble.Location = new System.Drawing.Point(273, 18);
             this.label_trouble.Name = "label_trouble";
             this.label_trouble.Size = new System.Drawing.Size(52, 21);
             this.label_trouble.TabIndex = 0;
@@ -281,5 +282,6 @@
         private System.Windows.Forms.Label label_trouble;
         private System.Windows.Forms.Label label_aircraft_number;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -7,6 +7,7 @@
         
         public const string UserAdded = "Kullanıcı Eklendi.";
         public const string UserUpdated = "Kullanıcı Güncellendi.";
+        public const string UserExist = "Kullanıcı Zaten Mevcut.";
         
         public const string HvBsNumberError = "HvBS Numarası Hatalı!";
         public const string PasswordError = "Parola Hatalı!";

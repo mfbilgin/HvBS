@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/5DFPf59SdlMAs+G2CWySaXc1xM7jVOZpkDrDnolm54klcXQ79sqWpv4nONbhOyBhLMFFUPgwPRW3DPo69a1kA==",
+  "dgSpecHash": "pfGS/T+SOStZGLla+K6rCQWPNLaxIFoZah3IA1FeIRu9bbbcl320HkF5Guwr+69aoi1lhWE2oU28d+C1FV9n0g==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\C#\\HvBS\\FormUI\\FormUI.csproj",
+  "projectFilePath": "C:\\Users\\mfbil\\Desktop\\HVBS\\FormUI\\FormUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mfbil\\.nuget\\packages\\autofac\\6.1.0\\autofac.6.1.0.nupkg.sha512",
     "C:\\Users\\mfbil\\.nuget\\packages\\autofac.extensions.dependencyinjection\\7.1.0\\autofac.extensions.dependencyinjection.7.1.0.nupkg.sha512",
@@ -139,7 +139,11 @@
     "C:\\Users\\mfbil\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\mfbil\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\mfbil\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\mfbil\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    "C:\\Users\\mfbil\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\mfbil\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\mfbil\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\mfbil\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\mfbil\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
   ],
   "logs": []
 }

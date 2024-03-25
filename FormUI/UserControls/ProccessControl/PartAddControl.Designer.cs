@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button_add = new System.Windows.Forms.Button();
-            this.textBox_waiting_aircraft_number = new System.Windows.Forms.TextBox();
+            this.textBox_part_name = new System.Windows.Forms.TextBox();
             this.label_waiting_aircraft_number_title = new System.Windows.Forms.Label();
             this.textBox_part_number = new System.Windows.Forms.TextBox();
             this.label_parts_number_title = new System.Windows.Forms.Label();
@@ -50,19 +50,18 @@
             this.button_add.UseVisualStyleBackColor = false;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // textBox_waiting_aircraft_number
+            // textBox_part_name
             // 
-            this.textBox_waiting_aircraft_number.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBox_part_name.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_waiting_aircraft_number.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
-            this.textBox_waiting_aircraft_number.ForeColor = System.Drawing.Color.White;
-            this.textBox_waiting_aircraft_number.Location = new System.Drawing.Point(737, 218);
-            this.textBox_waiting_aircraft_number.Name = "textBox_waiting_aircraft_number";
-            this.textBox_waiting_aircraft_number.Size = new System.Drawing.Size(245, 27);
-            this.textBox_waiting_aircraft_number.TabIndex = 125;
-            this.textBox_waiting_aircraft_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_waiting_aircraft_number.TextChanged += new System.EventHandler(this.textBox_waiting_aircraft_number_TextChanged);
+            this.textBox_part_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(67)))), ((int)(((byte)(137)))));
+            this.textBox_part_name.ForeColor = System.Drawing.Color.White;
+            this.textBox_part_name.Location = new System.Drawing.Point(737, 218);
+            this.textBox_part_name.Name = "textBox_part_name";
+            this.textBox_part_name.Size = new System.Drawing.Size(245, 27);
+            this.textBox_part_name.TabIndex = 125;
+            this.textBox_part_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label_waiting_aircraft_number_title
             // 
@@ -70,11 +69,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_waiting_aircraft_number_title.AutoSize = true;
-            this.label_waiting_aircraft_number_title.Location = new System.Drawing.Point(795, 192);
+            this.label_waiting_aircraft_number_title.Location = new System.Drawing.Point(824, 192);
             this.label_waiting_aircraft_number_title.Name = "label_waiting_aircraft_number_title";
-            this.label_waiting_aircraft_number_title.Size = new System.Drawing.Size(128, 20);
+            this.label_waiting_aircraft_number_title.Size = new System.Drawing.Size(71, 20);
             this.label_waiting_aircraft_number_title.TabIndex = 126;
-            this.label_waiting_aircraft_number_title.Text = "Bekleyen Uçak No";
+            this.label_waiting_aircraft_number_title.Text = "Parça Adı";
             // 
             // textBox_part_number
             // 
@@ -88,7 +87,6 @@
             this.textBox_part_number.Size = new System.Drawing.Size(245, 27);
             this.textBox_part_number.TabIndex = 122;
             this.textBox_part_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_part_number.TextChanged += new System.EventHandler(this.textBox_part_number_TextChanged);
             // 
             // label_parts_number_title
             // 
@@ -126,7 +124,6 @@
             this.checkBox_stock_status.TabIndex = 130;
             this.checkBox_stock_status.Text = "Stok Durumu";
             this.checkBox_stock_status.UseVisualStyleBackColor = true;
-            this.checkBox_stock_status.CheckedChanged += new System.EventHandler(this.checkBox_stock_status_CheckedChanged);
             // 
             // PartAddControl
             // 
@@ -134,7 +131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.checkBox_stock_status);
             this.Controls.Add(this.button_add);
-            this.Controls.Add(this.textBox_waiting_aircraft_number);
+            this.Controls.Add(this.textBox_part_name);
             this.Controls.Add(this.label_waiting_aircraft_number_title);
             this.Controls.Add(this.textBox_part_number);
             this.Controls.Add(this.label_parts_number_title);
@@ -150,7 +147,7 @@
         #endregion
 
         private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.TextBox textBox_waiting_aircraft_number;
+        private System.Windows.Forms.TextBox textBox_part_name;
         private System.Windows.Forms.Label label_waiting_aircraft_number_title;
         private System.Windows.Forms.TextBox textBox_part_number;
         private System.Windows.Forms.Label label_parts_number_title;

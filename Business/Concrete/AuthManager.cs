@@ -15,16 +15,15 @@ namespace Business.Concrete
         {
             _userService = userService;
         }
-        
+
         public IResult PasswordReset(UserForPasswordResetDto userForPasswordResetDto)
         {
-            byte[] passwordHash, passwordSalt;
-            User userToCheck = _userService.GetByHvBSNumber(userForPasswordResetDto.HvBSNumber).Data;
+            var userToCheck = _userService.GetByHvBsNumber(userForPasswordResetDto.HvBSNumber).Data;
             if (userToCheck == null)
             {
                 return new ErrorResult(Messages.HvBsNumberError);
             }
-            HashingHelper.CreatePasswordHash(userForPasswordResetDto.HvBSNumber, out passwordHash, out passwordSalt);
+            HashingHelper.CreatePasswordHash(userForPasswordResetDto.HvBSNumber, out var passwordHash, out var passwordSalt);
             userToCheck.PasswordHash = passwordHash;
             userToCheck.PasswordSalt = passwordSalt;
             _userService.Update(userToCheck);
@@ -33,7 +32,7 @@ namespace Business.Concrete
 
         public IResult Login(UserForLoginDto userForLoginDto)
         {
-            User userToCheck = _userService.GetByHvBSNumber(userForLoginDto.HvBSNumber).Data;
+            var userToCheck = _userService.GetByHvBsNumber(userForLoginDto.HvBSNumber).Data;
             if (userToCheck == null)
             {
                 return new ErrorResult(Messages.HvBsNumberError);
@@ -47,8 +46,7 @@ namespace Business.Concrete
 
         public IResult ChangePassword(UserForPasswordChangeDto userForPasswordChangeDto)
         {
-            User userToCheck = _userService.GetByHvBSNumber(userForPasswordChangeDto.HvBSNumber).Data;
-            byte[] passwordHash, passwordSalt;
+            var userToCheck = _userService.GetByHvBsNumber(userForPasswordChangeDto.HvBSNumber).Data;
             if (userToCheck == null)
                 return new ErrorResult(Messages.HvBsNumberError);
             if (!HashingHelper.VerifyPasswordHash(userForPasswordChangeDto.OldPassword, userToCheck.PasswordHash, userToCheck.PasswordSalt))
@@ -59,7 +57,7 @@ namespace Business.Concrete
             {
                 return new ErrorResult(Messages.PasswordSame);
             }
-            HashingHelper.CreatePasswordHash(userForPasswordChangeDto.NewPassword, out passwordHash, out passwordSalt);
+            HashingHelper.CreatePasswordHash(userForPasswordChangeDto.NewPassword, out var passwordHash, out var passwordSalt);
             userToCheck.PasswordHash = passwordHash;
             userToCheck.PasswordSalt = passwordSalt;
             _userService.Update(userToCheck);
@@ -68,9 +66,8 @@ namespace Business.Concrete
 
         public IResult Register(UserForRegisterDto userForRegisterDto)
         {
-            byte[] passwordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt);
-            User user = new User
+            HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out var passwordHash, out var passwordSalt);
+            var user = new User
             {
                 FirstName = userForRegisterDto.FirstName,
                 LastName = userForRegisterDto.LastName,
@@ -81,8 +78,8 @@ namespace Business.Concrete
                 Rank = userForRegisterDto.Rank,
                 Status = true,
             };
-            _userService.Add(user);
-            return new SuccessResult(Messages.UserRegistered);
+            var result = _userService.Add(user);
+            return result.Success ? new SuccessResult(Messages.UserRegistered) : result;
         }
     }
 }

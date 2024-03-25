@@ -1,10 +1,8 @@
-﻿using FluentValidation.Results;
+﻿using System.Collections.Generic;
+using FluentValidation.Results;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace Core.Extentions
+namespace Core.Extensions
 {
     public class ErrorDetails
     {

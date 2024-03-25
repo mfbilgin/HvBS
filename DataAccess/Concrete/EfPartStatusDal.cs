@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete
 {
-    public class EfPartStatusDal : EfEntityRepositoryBase<PartStatus,HvBSDataBaseContext>,IPartStatusDal
+    public class EfPartStatusDal : EfEntityRepositoryBase<Part,HvBsDataBaseContext>,IPartStatusDal
     {
     }
 }

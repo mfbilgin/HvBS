@@ -21,6 +21,10 @@ namespace Business.Concrete
 
         public IResult Add(User user)
         {
+            if (CheckIfUserExist(user.HvBSNumber))
+            {
+                return new ErrorResult(Messages.UserExist);
+            }
             _userDal.Add(user);
             AddMangerClaimIfNotExist(user.HvBSNumber);
             return new SuccessResult(Messages.UserAdded);     
@@ -36,7 +40,7 @@ namespace Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(user => user.UserId == userId));
         }
 
-        public IDataResult<User> GetByHvBSNumber(string hvbsNumber)
+        public IDataResult<User> GetByHvBsNumber(string hvbsNumber)
         {
             return new SuccessDataResult<User>(_userDal.Get(user => user.HvBSNumber == hvbsNumber));
         }
@@ -54,7 +58,7 @@ namespace Business.Concrete
             {
                 _userOperationClaimService.Add(new UserOperationClaim()
                     {
-                        UserId = GetByHvBSNumber(hvBsNumber).Data.UserId,
+                        UserId = GetByHvBsNumber(hvBsNumber).Data.UserId,
                         OperationClaimId = _operationClaimService.GetByName("Yönetici").Data.OperationClaimId,
                     }
                     );
@@ -63,11 +67,27 @@ namespace Business.Concrete
             {
                 _userOperationClaimService.Add(new UserOperationClaim()
                     {
-                        UserId = GetByHvBSNumber(hvBsNumber).Data.UserId,
+                        UserId = GetByHvBsNumber(hvBsNumber).Data.UserId,
                         OperationClaimId = _operationClaimService.GetByName("Görevli").Data.OperationClaimId,
                     }
                 );
             }
+        }
+        private bool CheckIfUserExist(string hvBsNumber)
+        {
+            var user = _userDal.Get(u => u.HvBSNumber == hvBsNumber);
+            return user != null;
+        }
+
+        public IList<string> GetAllUserName()
+        {
+            List<string> userNames = new List<string>();
+            List<User> users = GetAll().Data;
+            foreach (User user in users)
+            {
+                userNames.Add(user.FirstName + " " + user.LastName);
+            }
+            return userNames;
         }
     }
 }

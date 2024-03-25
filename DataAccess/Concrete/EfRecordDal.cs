@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete
 {
-    public class EfRecordDal : EfEntityRepositoryBase<Record,HvBSDataBaseContext>, IRecordDal
+    public class EfRecordDal : EfEntityRepositoryBase<Record,HvBsDataBaseContext>, IRecordDal
     {
     }
 }

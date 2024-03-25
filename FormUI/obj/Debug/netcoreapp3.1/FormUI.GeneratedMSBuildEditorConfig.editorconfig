@@ -6,4 +6,6 @@ build_property.ApplicationHighDpiMode =
 build_property.ApplicationUseCompatibleTextRendering = 
 build_property.ApplicationVisualStyles = 
 build_property.RootNamespace = FormUI
-build_property.ProjectDir = D:\Projects\C#\HvBS\FormUI\
+build_property.ProjectDir = C:\Users\mfbil\Desktop\HVBS\FormUI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

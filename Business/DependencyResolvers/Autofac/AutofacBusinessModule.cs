@@ -6,10 +6,6 @@ using Castle.DynamicProxy;
 using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Core.Entities.Concrete;
 
 namespace Business.DependencyResolvers.Autofac
 {
@@ -29,12 +25,18 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<RecordManager>().As<IRecordService>().SingleInstance();
             builder.RegisterType<EfRecordDal>().As<IRecordDal>().SingleInstance();
 
-            builder.RegisterType<PartStatusManager>().As<IPartStatusService>().SingleInstance();
+            builder.RegisterType<PartManager>().As<IPartService>().SingleInstance();
             builder.RegisterType<EfPartStatusDal>().As<IPartStatusDal>().SingleInstance();
 
             builder.RegisterType<MaintenanceTypeManager>().As<IMaintenanceTypeService>().SingleInstance();
             builder.RegisterType<EfMaintenanceTypeDal>().As<IMaintenanceTypeDal>().SingleInstance();
             
+            builder.RegisterType<BaseManager>().As<IBaseService>().SingleInstance();
+            builder.RegisterType<EfBaseDal>().As<IBaseDal>().SingleInstance();
+
+            builder.RegisterType<PlaneManager>().As<IPlaneService>().SingleInstance();
+            builder.RegisterType<EfPlaneDal>().As<IPlaneDal>().SingleInstance();
+
             builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

@@ -28,20 +28,16 @@ namespace FormUI.Forms
 
         private void textBox_HvBS_Enter(object sender, EventArgs e)
         {
-            if (textBox_HvBS.Text == "HvBS No")
-            {
-                textBox_HvBS.Text = "";
-                textBox_HvBS.ForeColor = SystemColors.WindowText;
-            }
+            if (textBox_HvBS.Text != @"HvBS No") return;
+            textBox_HvBS.Text = "";
+            textBox_HvBS.ForeColor = SystemColors.WindowText;
         }
 
         private void textBox_HvBS_Leave(object sender, EventArgs e)
         {
-            if (textBox_HvBS.Text == "")
-            {
-                textBox_HvBS.Text = "HvBS No";
-                textBox_HvBS.ForeColor = SystemColors.GrayText;
-            }
+            if (textBox_HvBS.Text != "") return;
+            textBox_HvBS.Text = @"HvBS No";
+            textBox_HvBS.ForeColor = SystemColors.GrayText;
 
         }
 

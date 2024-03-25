@@ -1,4 +1,4 @@
-﻿namespace FormUI.UserControls
+﻿namespace FormUI.UserControls.ViewControls
 {
     partial class WaitingRecordControl
     {
@@ -38,6 +38,7 @@
             this.label_register_date = new System.Windows.Forms.Label();
             this.label_trouble = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label_reason_of_waiting = new System.Windows.Forms.Label();
             this.label_aircraft_number = new System.Windows.Forms.Label();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -49,6 +50,7 @@
             this.label_identify_staff_title = new System.Windows.Forms.Label();
             this.label_reason_of_waiting_title = new System.Windows.Forms.Label();
             this.label_register_staff_title = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -135,6 +137,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label_estimated_date);
             this.groupBox1.Controls.Add(this.label_reason_of_waiting);
@@ -149,6 +152,17 @@
             this.groupBox1.Size = new System.Drawing.Size(1604, 60);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.BackgroundImage = global::FormUI.Properties.Resources.icons8_job_32;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(1144, 26);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(21, 21);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // label_reason_of_waiting
             // 
@@ -206,17 +220,17 @@
             // 
             this.label_register_date_title.AutoSize = true;
             this.label_register_date_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_register_date_title.Location = new System.Drawing.Point(340, 20);
+            this.label_register_date_title.Location = new System.Drawing.Point(349, 20);
             this.label_register_date_title.Name = "label_register_date_title";
-            this.label_register_date_title.Size = new System.Drawing.Size(169, 18);
+            this.label_register_date_title.Size = new System.Drawing.Size(107, 18);
             this.label_register_date_title.TabIndex = 19;
-            this.label_register_date_title.Text = "Bakıma Giriş Tarihi";
+            this.label_register_date_title.Text = "Kayıt Tarihi";
             // 
             // label_trouble_title
             // 
             this.label_trouble_title.AutoSize = true;
             this.label_trouble_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_trouble_title.Location = new System.Drawing.Point(218, 20);
+            this.label_trouble_title.Location = new System.Drawing.Point(157, 20);
             this.label_trouble_title.Name = "label_trouble_title";
             this.label_trouble_title.Size = new System.Drawing.Size(51, 18);
             this.label_trouble_title.TabIndex = 14;
@@ -226,7 +240,7 @@
             // 
             this.label_aircraft_title.AutoSize = true;
             this.label_aircraft_title.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label_aircraft_title.Location = new System.Drawing.Point(47, 20);
+            this.label_aircraft_title.Location = new System.Drawing.Point(29, 20);
             this.label_aircraft_title.Name = "label_aircraft_title";
             this.label_aircraft_title.Size = new System.Drawing.Size(122, 18);
             this.label_aircraft_title.TabIndex = 13;
@@ -308,5 +322,7 @@
         private System.Windows.Forms.Label label_reason_of_waiting;
         private System.Windows.Forms.Label label_reason_of_waiting_title;
         private System.Windows.Forms.Label label_register_staff_title;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

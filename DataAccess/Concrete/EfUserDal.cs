@@ -5,7 +5,7 @@ using DataAccess.Concrete.Context;
 
 namespace DataAccess.Concrete
 {
-    public class EfUserDal : EfEntityRepositoryBase<User,HvBSDataBaseContext>,IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User,HvBsDataBaseContext>,IUserDal
     {
         
     }
